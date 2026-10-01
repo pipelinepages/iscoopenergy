@@ -1,0 +1,43 @@
+
+/* iSCOOP — shared Framer-style layer
+   The visual system mirrors the supplied homepage: soft cream canvas, deep ink,
+   iSCOOP greens, rounded 2xl/3xl surfaces, glass navigation and restrained motion. */
+:root{
+  --brand:#16853b;
+  --brand-dark:#106d2f;
+  --brand-light:#27b957;
+  --lime:#b8d83e;
+  --ink:#06131d;
+  --cream:#f5f7f2;
+  --muted:#5e6b73;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);overflow-x:hidden}
+.font-body{font-family:"DM Sans",sans-serif}
+.shadow-framer{box-shadow:0 20px 50px -10px rgba(6,19,29,.12),0 0 0 1px rgba(6,19,29,.06) inset}
+.shadow-framer-hover{box-shadow:0 30px 70px -10px rgba(22,133,59,.20),0 0 0 1px rgba(22,133,59,.25) inset}
+.shadow-glass{box-shadow:0 8px 32px rgba(6,19,29,.08)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-visible{opacity:1;transform:none}
+.page-glow{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.page-glow:before,.page-glow:after{content:"";position:absolute;border-radius:999px;filter:blur(110px)}
+.page-glow:before{width:55vw;height:55vw;left:-12%;top:-16%;background:rgba(39,185,87,.11)}
+.page-glow:after{width:50vw;height:50vw;right:-14%;top:30%;background:rgba(184,216,62,.10)}
+.grid-fade{background-image:linear-gradient(rgba(6,19,29,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(6,19,29,.04) 1px,transparent 1px);background-size:28px 28px}
+.hero-orb{position:absolute;border-radius:999px;filter:blur(2px);background:radial-gradient(circle at 35% 35%,rgba(184,216,62,.55),rgba(22,133,59,.16) 35%,transparent 68%)}
+.text-balance{text-wrap:balance}
+.section-label{letter-spacing:.18em}
+.prose-tight p{line-height:1.8}
+.prose-tight li{line-height:1.65}
+input,select,textarea{font:inherit}
+input:focus,select:focus,textarea:focus{box-shadow:0 0 0 4px rgba(22,133,59,.10)}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+details[open] .faq-plus{transform:rotate(45deg)}
+.faq-plus{transition:transform .2s ease}
+.package-table{border-collapse:separate;border-spacing:0;overflow:hidden}
+.package-table th,.package-table td{border-bottom:1px solid rgba(6,19,29,.08);vertical-align:top}
+.package-table tr:last-child td{border-bottom:0}
+@media(max-width:767px){
+  .package-table{display:block;overflow-x:auto;white-space:normal}
+}

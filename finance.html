@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexible Solar Finance | iSCOOP</title>
+  <meta name="description" content="Explore finance options for eligible iSCOOP solar customers. Terms are subject to lender assessment and approval.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config={
+      darkMode:'class',
+      theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],body:['"DM Sans"','sans-serif']},
+      colors:{brand:{50:'#eef7ee',100:'#d8ecd9',200:'#b3d9b6',300:'#27b957',400:'#16853b',500:'#16853b',600:'#106d2f',700:'#0d5a26',800:'#0a4720',900:'#07361a',950:'#052e16'},lime:{300:'#d3e878',400:'#b8d83e',500:'#9db82a'},ink:'#06131d',cream:'#f5f7f2',muted:'#5e6b73'},
+      boxShadow:{framer:'0 20px 50px -10px rgba(6,19,29,.12),0 0 0 1px rgba(6,19,29,.06) inset',glass:'0 8px 32px rgba(6,19,29,.08)'}}}
+    };
+  </script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-brand-400 selection:text-white overflow-x-hidden">
+
+<div class="page-glow"></div>
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between backdrop-blur-xl bg-white/80 border border-ink/10 rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3.5 shadow-glass">
+    <a href="index.html" class="flex items-center" aria-label="iSCOOP home">
+      <img src="assets/iscoop-logo.png" alt="iSCOOP EPC - Renewable Energy Company" class="w-[96px] sm:w-[118px] h-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-1">
+      <a href="index.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Home</a>
+      <div class="relative group">
+        <button type="button" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors flex items-center gap-1.5">
+          Solutions
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="absolute top-full left-0 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+          <div class="pt-2">
+            <div class="p-2 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl">
+              <a href="homes.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Homes</div><div class="text-xs text-muted">Residential solar sized around your actual load</div></a>
+              <a href="business.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Business & SME</div><div class="text-xs text-muted">Keep critical business loads moving</div></a>
+              <a href="commercial.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Commercial & Institutions</div><div class="text-xs text-muted">End-to-end renewable-energy EPC delivery</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="packages.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Packages</a>
+      <a href="finance.html" class="px-4 py-2 rounded-xl text-sm font-medium text-brand-500 bg-brand-500/10 transition-colors">Flexible Finance</a>
+      <a href="epc-services.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">EPC Services</a>
+      <a href="support.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Support</a>
+      <a href="about.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">About</a>
+    </nav>
+    <div class="hidden sm:flex items-center gap-3">
+      <a href="service-request.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-ink/70 hover:text-ink hover:bg-ink/5 transition-all border border-ink/10">Service Request</a>
+      <a href="quote.html" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-500 shadow-lg shadow-brand-500/25 hover:bg-brand-600 hover:shadow-brand-500/40 hover:scale-[1.02] transition-all">
+        Get Your Solar Plan
+      </a>
+    </div>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-ink/10 text-ink/80 hover:bg-cream active:scale-95 transition-all" aria-label="Toggle menu">
+      <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 p-3 sm:p-4 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
+    <a href="index.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Home</a>
+    <div class="pt-2 px-4 text-[10px] font-bold uppercase tracking-widest text-muted">Solutions</div>
+    <a href="homes.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Homes</a>
+    <a href="business.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Business & SME</a>
+    <a href="commercial.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Commercial & Institutions</a>
+    <a href="packages.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Packages</a>
+    <a href="finance.html" class="block px-4 py-3 rounded-xl font-medium text-brand-500 bg-brand-500/10">Flexible Finance</a>
+    <a href="epc-services.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">EPC Services</a>
+    <a href="support.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Support</a>
+    <a href="about.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">About</a>
+    <a href="faq.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">FAQ</a>
+    <div class="pt-2 border-t border-ink/10 flex gap-2">
+      <a href="service-request.html" class="flex-1 text-center py-3 rounded-xl font-bold text-ink bg-cream">Service Request</a>
+      <a href="quote.html" class="flex-1 text-center py-3 rounded-xl font-bold text-white bg-brand-500">Get Your Solar Plan</a>
+    </div>
+  </div>
+</header>
+<main class="relative z-10 pt-28 sm:pt-32 lg:pt-40">
+<section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-20">
+  <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
+    <div class="lg:col-span-8 reveal">
+      <span class="inline-flex px-3.5 py-1.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-[10px] sm:text-xs font-bold tracking-widest uppercase">FLEXIBLE FINANCE</span>
+      <h1 class="text-[2.3rem] leading-[1.06] sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-5 text-balance text-white">Flexible Ways to Own Your Solar System</h1>
+    </div>
+    <div class="lg:col-span-4 reveal">
+      <p class="text-base sm:text-lg text-slate-400 font-body leading-relaxed">Eligible iSCOOP customers may be able to spread the cost of an approved solar system through financing provided by third-party financial institutions.</p>
+    </div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+    <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer reveal">
+      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">How it works</span>
+      <div class="mt-7 space-y-4">
+        <div class="step"><b>01</b><div><strong>Choose a system or request sizing</strong><p>Start from a package or tell us what you want to power.</p></div></div>
+        <div class="step"><b>02</b><div><strong>Submit your finance interest</strong><p>Provide the information needed for the finance route available to your profile.</p></div></div>
+        <div class="step"><b>03</b><div><strong>Complete eligibility / credit checks</strong><p>The finance provider assesses the application.</p></div></div>
+        <div class="step"><b>04</b><div><strong>Receive approved terms</strong><p>Terms come from the relevant finance provider.</p></div></div>
+        <div class="step"><b>05</b><div><strong>Pay any required contribution</strong><p>Any contribution depends on the approved arrangement.</p></div></div>
+        <div class="step"><b>06</b><div><strong>iSCOOP installs</strong><p>Installation follows approved settlement conditions.</p></div></div>
+      </div>
+    </div>
+    <div class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#0a2029] via-[#073f2a] to-[#101a18] p-6 sm:p-10 text-white shadow-framer reveal">
+      <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">What may affect approval</span>
+      <ul class="mt-6 space-y-3 text-sm text-slate-300 font-body">
+        <li>Employment or business profile</li><li>Income / turnover</li><li>Credit assessment</li><li>Package value</li><li>Customer contribution</li><li>Requested tenor</li><li>Provider policy</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20">
+  <div class="rounded-3xl bg-[#e8f4e9] border border-brand-500/15 p-6 sm:p-10 reveal">
+    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Finance disclaimer</span>
+    <p class="text-ink/75 font-body leading-relaxed mt-3 max-w-4xl">Finance is subject to eligibility, credit assessment and partner approval. Rates, fees, contribution and tenor vary by applicant and provider. iSCOOP does not guarantee approval or determine a lender’s final credit decision.</p>
+    <a href="quote.html?type=finance" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold hover:bg-brand-600">Check Finance Options →</a>
+  </div>
+</section>
+<style>.step{display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid rgba(6,19,29,.08);border-radius:1rem;background:#f5f7f2}.step b{width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:.7rem;background:rgba(22,133,59,.1);color:#16853b;font-size:.8rem;flex:none}.step strong{font-size:.92rem}.step p{font:400 .8rem/1.55 "DM Sans",sans-serif;color:#5e6b73;margin-top:.25rem}</style>
+</main>
+<footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8 mt-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-12">
+    <div class="space-y-4 col-span-2 md:col-span-2">
+      <a href="index.html" class="inline-block"><img src="assets/iscoop-logo.png" alt="iSCOOP" class="w-[110px] sm:w-[125px] h-auto" style="filter:brightness(0) invert(1);opacity:.95"></a>
+      <p class="text-sm text-slate-400 max-w-sm">Reliable renewable-energy solutions for homes, businesses and institutions.</p>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Solutions</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="homes.html" class="hover:text-white">Homes</a></li>
+        <li><a href="business.html" class="hover:text-white">Business & SME</a></li>
+        <li><a href="commercial.html" class="hover:text-white">Commercial & Institutions</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Platform</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="packages.html" class="hover:text-white">Packages</a></li>
+        <li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li>
+        <li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Company</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="support.html" class="hover:text-white">Support</a></li>
+        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+        <li><a href="about.html" class="hover:text-white">About</a></li>
+        <li><a href="service-request.html" class="hover:text-white">Service Request</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center lg:text-left">
+    <div>© <span data-year>2026</span> iSCOOP EPC- Renewable Energy Company. All rights reserved.</div>
+    <div>Financing is provided by third-party financial institutions and is subject to eligibility and approval.</div>
+  </div>
+</footer>
+<script src="script.js"></script>

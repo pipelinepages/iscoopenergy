@@ -82,30 +82,46 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-20">
   <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 items-end">
     <div class="lg:col-span-8 reveal">
-      <span class="inline-flex px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-[10px] sm:text-xs font-bold tracking-widest uppercase">SUPPORT & O&M</span>
-      <h1 class="text-[2.3rem] leading-[1.06] sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-5 text-balance text-ink">Support Beyond Installation</h1>
+      <span class="inline-flex px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-[10px] sm:text-xs font-bold tracking-widest uppercase">SUPPORT & AFTER-SALES</span>
+      <h1 class="text-[2.3rem] leading-[1.06] sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-5 text-balance text-ink">Support that continues beyond installation</h1>
     </div>
     <div class="lg:col-span-4 reveal">
-      <p class="text-base sm:text-lg text-muted font-body leading-relaxed">A solar system is a long-term energy asset. iSCOOP provides structured support to help customers maintain safe, reliable operation.</p>
+      <p class="text-base sm:text-lg text-muted font-body leading-relaxed">We’re with you beyond installation. Get help with system performance, maintenance planning, warranty coordination and technical questions.</p>
     </div>
+  </div>
+</section>
+<section id="contact" class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="support-card reveal"><span>⌁</span><h3>System performance</h3><p>Help review reported system performance and component health.</p></div>
+    <div class="support-card reveal"><span>↻</span><h3>Maintenance</h3><p>Plan preventive maintenance around your system and site needs.</p></div>
+    <div class="support-card reveal"><span>✓</span><h3>Warranty support</h3><p>Guidance and coordination through applicable warranty processes.</p></div>
+    <div class="support-card reveal"><span>⌕</span><h3>Technical help</h3><p>Structured troubleshooting for system questions and reported issues.</p></div>
   </div>
 </section>
 <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
-  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-    <div class="support-card reveal"><span>⌁</span><h3>Technical support</h3><p>Help with system questions and operational issues.</p></div>
-    <div class="support-card reveal"><span>⌕</span><h3>Fault diagnosis</h3><p>Structured troubleshooting to help identify faults.</p></div>
-    <div class="support-card reveal"><span>↻</span><h3>Preventive maintenance</h3><p>Plan maintenance around your energy asset and service needs.</p></div>
-    <div class="support-card reveal"><span>◈</span><h3>Battery / inverter checks</h3><p>Checks and guidance for core system components.</p></div>
-    <div class="support-card reveal"><span>☼</span><h3>Panel inspection guidance</h3><p>Inspection and cleaning guidance where appropriate.</p></div>
-    <div class="support-card reveal"><span>✓</span><h3>Warranty coordination</h3><p>Support through agreed warranty processes.</p></div>
-    <div class="support-card reveal"><span>＋</span><h3>System expansion review</h3><p>Assess whether an existing system can be expanded.</p></div>
+  <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-9 shadow-framer reveal">
+    <div class="max-w-3xl"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Application support</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Track your application</h2><p class="text-muted font-body mt-2">Enter your reference to see how to follow up. Online status lookup is not connected yet.</p></div>
+    <form id="application-tracker" class="grid sm:grid-cols-[1fr_auto] gap-3 mt-6 max-w-3xl"><label class="sr-only" for="application-reference">Application reference</label><input id="application-reference" class="support-field" type="text" placeholder="e.g. IS-2026-00123" required autocomplete="off"><button type="submit" class="px-6 py-3.5 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Track status</button></form>
+    <p id="tracker-message" class="hidden mt-4 p-4 rounded-xl bg-[#fff7e6] border border-[#f1d99a] text-sm text-ink" role="status" aria-live="polite">Live application tracking is not connected yet. To follow up, include your reference when you <a href="service-request.html" class="font-bold text-brand-600 underline">submit a service request</a>.</p>
   </div>
 </section>
-<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20"><div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
-  <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer reveal"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Request service</span><h2 class="text-3xl font-extrabold mt-2">Give the technical team a useful starting point.</h2><p class="text-muted font-body leading-relaxed mt-4">Have your installation reference, location and a short description of the issue ready. Photos or videos can help our technical team triage faster.</p><a href="service-request.html" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold hover:bg-brand-600">Request Service →</a></div>
-  <div class="rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-6 sm:p-10 text-white shadow-framer reveal"><span class="text-lime-400 font-bold text-xs uppercase tracking-widest">Preventive maintenance</span><h2 class="text-3xl font-extrabold mt-2">Plan maintenance before small issues become bigger ones.</h2><p class="text-slate-400 font-body leading-relaxed mt-4">Tell us about the system and the support you need, and we can discuss an appropriate maintenance arrangement.</p><a href="service-request.html?request=maintenance" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-white/10 border border-white/10 font-bold hover:bg-white/15">Plan Preventive Maintenance →</a></div>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20"><div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+  <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer reveal"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Contact support</span><h2 class="text-3xl font-extrabold mt-2">How can we help?</h2><p class="text-muted font-body leading-relaxed mt-3">Share a short description and your preferred contact details. For technical issues, include your installation reference and location.</p>
+    <form data-form class="grid sm:grid-cols-2 gap-4 mt-6">
+      <p class="sm:col-span-2 text-sm text-muted">This message form is a front-end preview and does not currently send or store your details. For a live service request, <a href="service-request.html" class="font-bold text-brand-600 underline">use the service request page</a>.</p>
+      <div><label for="support-name" class="support-label">Full name</label><input id="support-name" class="support-field" type="text" autocomplete="name" placeholder="Your name" required></div>
+      <div><label for="support-phone" class="support-label">Phone number</label><input id="support-phone" class="support-field" type="tel" autocomplete="tel" placeholder="Your phone number" required></div>
+      <div class="sm:col-span-2"><label for="support-message" class="support-label">How can we help?</label><textarea id="support-message" class="support-field" rows="4" placeholder="Describe your question or issue" required></textarea></div>
+      <div class="sm:col-span-2"><button type="submit" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Send message</button></div>
+      <div class="success hidden sm:col-span-2 p-4 rounded-xl bg-[#fff7e6] border border-[#f1d99a] text-sm text-ink" role="status">Preview only: your message has not been sent. Please use the <a href="service-request.html" class="font-bold text-brand-600 underline">live service request page</a> to contact the team.</div>
+    </form>
+  </div>
+  <div class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-6 sm:p-10 text-white shadow-framer reveal"><span class="text-lime-400 font-bold text-xs uppercase tracking-widest">Maintenance & escalation</span><h2 class="text-3xl font-extrabold mt-2">Need hands-on help?</h2><p class="text-slate-300 font-body leading-relaxed mt-4">Use our service request route for fault diagnosis, warranty coordination, maintenance planning or a system expansion review. Include your site and issue details so the team has a useful starting point.</p><a href="service-request.html" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold hover:bg-brand-600">Request service →</a></div>
 </div></section>
-<style>.support-card{padding:1.4rem;border-radius:1.5rem;background:#fff;border:1px solid rgba(6,19,29,.1)}.support-card span{display:inline-flex;width:2.7rem;height:2.7rem;border-radius:.9rem;background:rgba(22,133,59,.1);color:#16853b;align-items:center;justify-content:center;font-weight:900}.support-card h3{font-weight:800;margin-top:1rem}.support-card p{font:400 .85rem/1.65 "DM Sans",sans-serif;color:#5e6b73;margin-top:.4rem}</style>
+<style>.support-card{padding:1.4rem;border-radius:1.5rem;background:#fff;border:1px solid rgba(6,19,29,.1)}.support-card span{display:inline-flex;width:2.7rem;height:2.7rem;border-radius:.9rem;background:rgba(22,133,59,.1);color:#16853b;align-items:center;justify-content:center;font-weight:900}.support-card h3{font-weight:800;margin-top:1rem}.support-card p{font:400 .85rem/1.65 "DM Sans",sans-serif;color:#5e6b73;margin-top:.4rem}.support-label{display:block;font-size:.875rem;font-weight:700;color:#16252c;margin-bottom:.4rem}.support-field{width:100%;padding:.85rem 1rem;border:1px solid rgba(6,19,29,.15);border-radius:.8rem;background:#fff;color:#16252c;outline:0}.support-field:focus{border-color:#16853b;box-shadow:0 0 0 3px rgba(22,133,59,.12)}</style>
+<script>
+(()=>{const form=document.getElementById('application-tracker');const message=document.getElementById('tracker-message');form?.addEventListener('submit',event=>{event.preventDefault();message?.classList.remove('hidden');message?.scrollIntoView({behavior:'smooth',block:'center'});});})();
+</script>
 </main>
 <footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8 mt-10">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-12">
@@ -127,6 +143,7 @@
         <li><a href="packages.html" class="hover:text-white">Packages</a></li>
         <li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li>
         <li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li>
+        <li><a href="projects.html" class="hover:text-white">Projects</a></li>
       </ul>
     </div>
     <div>

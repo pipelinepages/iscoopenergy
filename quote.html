@@ -109,7 +109,7 @@
           </div>
           <div class="grid sm:grid-cols-2 gap-4">
             <div><label class="label">Email Address</label><input class="field" type="email" placeholder="name@example.com"></div>
-            <div><label class="label">Customer Type</label><select class="field"><option>Home</option><option>Business / SME</option><option>Commercial / Institution</option><option>Existing iSCOOP Customer</option></select></div>
+            <div><label class="label">Customer Type</label><select id="customer-type" class="field"><option value="home">Home</option><option value="business">Business / SME</option><option value="commercial">Commercial / Institution</option><option value="existing">Existing iSCOOP Customer</option></select></div>
           </div>
           <div><label class="label">Package (optional)</label><select data-package-field class="field"><option value="">Not sure yet</option><option>Portable 500</option><option>Portable 1K</option><option>Essential 1.5</option><option>Essential Plus</option><option>Comfort 2.5</option><option>Comfort 5</option><option>Scale 5</option><option>Scale 10</option><option>Scale 15</option><option>Business 30</option><option>Business 45</option></select></div>
           <div><label class="label">What do you want to power?</label><textarea required rows="5" class="field resize-none" placeholder="List appliances, equipment, operating hours or any other useful information."></textarea></div>
@@ -143,6 +143,7 @@
         <li><a href="packages.html" class="hover:text-white">Packages</a></li>
         <li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li>
         <li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li>
+        <li><a href="projects.html" class="hover:text-white">Projects</a></li>
       </ul>
     </div>
     <div>
@@ -161,3 +162,10 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script>
+  (function () {
+    var type = new URLSearchParams(window.location.search).get('type');
+    var customerType = document.getElementById('customer-type');
+    if (customerType && ['home', 'business', 'commercial'].indexOf(type) !== -1) customerType.value = type;
+  })();
+</script>

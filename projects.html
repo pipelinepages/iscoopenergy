@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renewable Energy Projects | iSCOOP</title>
+  <meta name="description" content="Explore iSCOOP renewable-energy project work across homes, businesses, institutions and EPC delivery.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],body:['"DM Sans"','sans-serif']},colors:{brand:{50:'#eef7ee',100:'#d8ecd9',200:'#b3d9b6',300:'#27b957',400:'#16853b',500:'#16853b',600:'#106d2f',700:'#0d5a26',800:'#0a4720',900:'#07361a',950:'#052e16'},lime:{300:'#d3e878',400:'#b8d83e',500:'#9db82a'},ink:'#06131d',cream:'#f5f7f2',muted:'#5e6b73'},boxShadow:{glass:'0 8px 32px rgba(6,19,29,.08)',framer:'0 20px 50px -10px rgba(6,19,29,.12),0 0 0 1px rgba(6,19,29,.06) inset'}}}};
+  </script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-brand-400 selection:text-white overflow-x-hidden">
+<div class="page-glow"></div>
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 px-3 sm:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between backdrop-blur-xl bg-white/85 border border-ink/10 rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3.5 shadow-glass">
+    <a href="index.html" class="flex items-center" aria-label="iSCOOP home"><img src="assets/iscoop-logo.png" alt="iSCOOP EPC - Renewable Energy Company" class="w-[96px] sm:w-[118px] h-auto"></a>
+    <nav class="hidden lg:flex items-center gap-1" aria-label="Main navigation">
+      <a href="index.html" class="nav-link">Home</a>
+      <div class="relative group"><button type="button" class="nav-link flex items-center gap-1.5">Solutions <span aria-hidden="true">⌄</span></button><div class="absolute top-full left-0 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200"><div class="pt-2"><div class="p-2 bg-white border border-ink/10 rounded-2xl shadow-2xl"><a href="homes.html" class="block p-3 rounded-xl hover:bg-cream"><div class="font-semibold text-sm">Homes</div><div class="text-xs text-muted">Residential solar solutions</div></a><a href="business.html" class="block p-3 rounded-xl hover:bg-cream"><div class="font-semibold text-sm">Business & SME</div><div class="text-xs text-muted">Solar for operating businesses</div></a><a href="commercial.html" class="block p-3 rounded-xl hover:bg-cream"><div class="font-semibold text-sm">Commercial & Institutions</div><div class="text-xs text-muted">End-to-end renewable-energy EPC</div></a></div></div></div></div>
+      <a href="packages.html" class="nav-link">Packages</a><a href="finance.html" class="nav-link">Flexible Finance</a><a href="epc-services.html" class="nav-link">EPC Services</a><a href="support.html" class="nav-link">Support</a><a href="about.html" class="nav-link">About</a>
+    </nav>
+    <div class="hidden sm:flex items-center gap-3"><a href="quote.html?type=commercial" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-500 hover:bg-brand-600">Discuss a Project</a></div>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-ink/10 text-ink/80" aria-label="Toggle menu"><svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 p-3 bg-white border border-ink/10 rounded-2xl shadow-2xl space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
+    <a href="index.html" class="mobile-link">Home</a><a href="homes.html" class="mobile-link">Homes</a><a href="business.html" class="mobile-link">Business & SME</a><a href="commercial.html" class="mobile-link">Commercial & Institutions</a><a href="packages.html" class="mobile-link">Packages</a><a href="finance.html" class="mobile-link">Flexible Finance</a><a href="epc-services.html" class="mobile-link">EPC Services</a><a href="projects.html" class="mobile-link text-brand-600">Projects</a><a href="support.html" class="mobile-link">Support</a><a href="about.html" class="mobile-link">About</a><a href="quote.html?type=commercial" class="mobile-link font-bold text-brand-600">Discuss a Project</a>
+  </div>
+</header>
+<main class="relative z-10 pt-28 sm:pt-32 lg:pt-40">
+  <section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-20">
+    <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+      <div class="lg:col-span-8 reveal"><span class="inline-flex px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 text-[10px] sm:text-xs font-bold tracking-widest uppercase">PROJECT PORTFOLIO</span><h1 class="text-[2.4rem] leading-[1.06] sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-5 text-balance text-ink">Projects built around real energy needs</h1><p class="text-base sm:text-lg text-muted font-body leading-relaxed mt-5 max-w-3xl">Explore iSCOOP renewable-energy work across homes, businesses and institutions. Each published project story will show the context, scope and delivery approach behind the solution.</p><div class="flex flex-col sm:flex-row gap-3 mt-7"><a href="quote.html?type=commercial" class="px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold text-center hover:bg-brand-600">Discuss a project</a><a href="epc-services.html" class="px-6 py-3.5 rounded-2xl bg-white border border-ink/10 font-bold text-center hover:bg-cream">Explore EPC services</a></div></div>
+      <div class="lg:col-span-4 reveal"><div class="portfolio-art rounded-3xl p-7 sm:p-9 min-h-[270px] text-white flex flex-col justify-between overflow-hidden relative"><div class="portfolio-sun"></div><div class="relative z-10"><span class="text-lime-300 text-xs font-bold uppercase tracking-widest">Engineering · Delivery · Support</span><p class="text-2xl font-extrabold mt-3 max-w-xs">From site assessment to commissioned systems.</p></div><svg class="relative z-10 w-full mt-8" viewBox="0 0 360 100" role="img" aria-label="Illustration of a solar array"><path d="M35 79h290M58 77l16-45h76l15 45M165 77l15-45h76l15 45" fill="none" stroke="#b8d83e" stroke-width="3"/><path d="M67 49h87M59 70h99M174 49h89M167 70h102M101 32v45M207 32v45M246 32v45" stroke="#d8ecd9" stroke-width="2"/><path d="M26 86h308" stroke="white" stroke-opacity=".35" stroke-width="2"/></svg><span class="absolute -right-10 -bottom-24 w-64 h-64 rounded-full border border-white/10"></span></div></div>
+    </div>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-8"><div class="grid sm:grid-cols-3 gap-3"><div class="portfolio-pillar"><span>01</span><strong>Understand the site</strong><p>Load profile, operating needs and project context.</p></div><div class="portfolio-pillar"><span>02</span><strong>Engineer the solution</strong><p>System design and delivery scope suited to the requirement.</p></div><div class="portfolio-pillar"><span>03</span><strong>Deliver and support</strong><p>Procurement, installation, commissioning and after-sales support.</p></div></div></section>
+  <section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-7"><div><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Project catalogue</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Explore project stories</h2><p class="text-muted font-body mt-3 max-w-2xl">Filter by project type and scale. Published stories will include verified project details approved for sharing.</p></div><a href="quote.html?type=commercial" class="text-brand-600 font-bold text-sm">Have a project in mind? Talk to iSCOOP →</a></div>
+    <div class="rounded-2xl bg-white border border-ink/10 p-4 sm:p-5 grid sm:grid-cols-2 gap-4 mb-6">
+      <div><label for="project-type-filter" class="filter-label">Project type</label><select id="project-type-filter" class="filter-field"><option value="all">All project types</option><option value="residential">Residential</option><option value="business-sme">Business & SME</option><option value="commercial-institutional">Commercial & Institutions</option><option value="epc-infrastructure">EPC / Infrastructure</option></select></div>
+      <div><label for="project-scale-filter" class="filter-label">Project scale</label><select id="project-scale-filter" class="filter-field"><option value="all">All scales</option><option value="home">Home-scale</option><option value="small-business">Small business</option><option value="commercial">Commercial</option><option value="large-custom">Large / custom</option></select></div>
+    </div>
+    <!-- CMS integration: render one project-card-template per published story. Set data-project-type and data-project-scale to filter values above. Populate data-project-field attributes from approved CMS fields. -->
+    <div id="project-grid" data-project-cms-list class="grid md:grid-cols-2 xl:grid-cols-3 gap-5" aria-live="polite"></div>
+    <div id="project-empty-state" class="rounded-3xl border border-dashed border-brand-500/30 bg-white px-6 py-12 sm:py-16 text-center reveal" role="status">
+      <div class="mx-auto w-16 h-16 rounded-2xl bg-brand-500/10 text-brand-600 flex items-center justify-center"><svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 20h18M5 20V9l7-5 7 5v11M9 20v-6h6v6M8 10h.01M16 10h.01" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <p class="text-brand-600 text-xs font-bold uppercase tracking-widest mt-5">Portfolio in preparation</p><h3 id="project-empty-title" class="text-2xl sm:text-3xl font-extrabold mt-2">No published projects yet</h3><p id="project-empty-copy" class="text-muted font-body leading-relaxed max-w-2xl mx-auto mt-3">We’re preparing project stories with verified scope and delivery details. Check back soon to explore the portfolio.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-3 mt-7"><a href="quote.html?type=commercial" class="px-5 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Discuss your project</a><a href="packages.html" class="px-5 py-3 rounded-xl bg-cream text-ink font-bold hover:bg-ink/10">Explore packages</a></div>
+    </div>
+    <p class="text-xs text-muted text-center mt-5">Project details are published only after technical review and approval for public sharing.</p>
+  </section>
+  <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20"><div class="rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-6 sm:p-10 text-white flex flex-col lg:flex-row lg:items-center justify-between gap-6 reveal"><div><span class="text-lime-400 text-xs font-bold uppercase tracking-widest">Start with your site</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Your energy project starts with an assessment.</h2><p class="text-slate-300 font-body mt-3 max-w-2xl">Share your location, energy needs and project objectives. iSCOOP can help define a practical next step.</p></div><a href="quote.html?type=commercial" class="shrink-0 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold text-center hover:bg-brand-600">Request an assessment</a></div></section>
+  <!-- CMS card blueprint (not rendered until project content is available). Keep type and scale values aligned with the filter options above. -->
+  <template id="project-card-template"><article class="project-card rounded-3xl bg-white border border-ink/10 overflow-hidden shadow-framer" data-project-card data-project-type="" data-project-scale=""><img class="project-image" data-project-field="image" src="" alt="" loading="lazy"><div class="p-6"><div class="flex items-center gap-2"><span class="project-tag" data-project-field="type-label"></span><span class="project-scale-label" data-project-field="scale-label"></span></div><h3 class="text-xl font-extrabold mt-4" data-project-field="title"></h3><p class="text-sm text-muted font-body leading-relaxed mt-2" data-project-field="summary"></p><dl class="project-meta mt-5"><div><dt>Location</dt><dd data-project-field="location"></dd></div><div><dt>System scope</dt><dd data-project-field="scope"></dd></div></dl><a class="inline-flex mt-5 text-brand-600 font-bold text-sm" data-project-field="url" href="#">View project details →</a></div></article></template>
+</main>
+<footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8 mt-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-12">
+    <div class="space-y-4 col-span-2 md:col-span-2"><a href="index.html" class="inline-block"><img src="assets/iscoop-logo.png" alt="iSCOOP" class="w-[110px] sm:w-[125px] h-auto" style="filter:brightness(0) invert(1);opacity:.95"></a><p class="text-sm text-slate-400 max-w-sm">Reliable renewable-energy solutions for homes, businesses and institutions.</p></div>
+    <div><div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Solutions</div><ul class="space-y-2.5 text-sm"><li><a href="homes.html" class="hover:text-white">Homes</a></li><li><a href="business.html" class="hover:text-white">Business & SME</a></li><li><a href="commercial.html" class="hover:text-white">Commercial & Institutions</a></li></ul></div>
+    <div><div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Platform</div><ul class="space-y-2.5 text-sm"><li><a href="packages.html" class="hover:text-white">Packages</a></li><li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li><li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li><li><a href="projects.html" class="hover:text-white text-lime-300">Projects</a></li></ul></div>
+    <div><div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Company</div><ul class="space-y-2.5 text-sm"><li><a href="support.html" class="hover:text-white">Support</a></li><li><a href="faq.html" class="hover:text-white">FAQ</a></li><li><a href="about.html" class="hover:text-white">About</a></li><li><a href="service-request.html" class="hover:text-white">Service Request</a></li></ul></div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center lg:text-left"><div>© <span data-year>2026</span> iSCOOP EPC - Renewable Energy Company. All rights reserved.</div><div>Financing is provided by third-party financial institutions and is subject to eligibility and approval.</div></div>
+</footer>
+<style>
+.nav-link{padding:.5rem 1rem;border-radius:.75rem;font-size:.875rem;font-weight:500;color:rgba(6,19,29,.7);transition:.2s}.nav-link:hover{color:#06131d;background:rgba(6,19,29,.05)}
+.mobile-link{display:block;padding:.75rem 1rem;border-radius:.75rem;font-weight:500;color:rgba(6,19,29,.75)}.mobile-link:hover{background:#f5f7f2}
+.portfolio-art{background:radial-gradient(circle at 78% 18%,rgba(184,216,62,.28),transparent 28%),linear-gradient(135deg,#06131d,#0b5134 72%,#153e35)}.portfolio-sun{position:absolute;right:2rem;top:2rem;width:5rem;height:5rem;border-radius:50%;background:#b8d83e;opacity:.8;box-shadow:0 0 60px rgba(184,216,62,.32)}
+.portfolio-pillar{padding:1.25rem;border-radius:1.25rem;background:#fff;border:1px solid rgba(6,19,29,.08)}.portfolio-pillar span{display:block;color:#16853b;font-size:.7rem;font-weight:800;letter-spacing:.12em}.portfolio-pillar strong{display:block;margin-top:.6rem}.portfolio-pillar p{margin-top:.35rem;color:#5e6b73;font:400 .82rem/1.5 "DM Sans",sans-serif}
+.filter-label{display:block;font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:rgba(6,19,29,.65);margin-bottom:.4rem}.filter-field{width:100%;padding:.85rem 1rem;border-radius:.8rem;background:#f5f7f2;border:1px solid rgba(6,19,29,.12);color:#06131d;outline:0}.filter-field:focus{border-color:#16853b;box-shadow:0 0 0 3px rgba(22,133,59,.12)}
+.project-image{display:block;width:100%;height:13rem;object-fit:cover;background:linear-gradient(135deg,#d8ecd9,#edf3e8 45%,#b3d9b6)}.project-tag{display:inline-flex;padding:.35rem .6rem;border-radius:999px;background:rgba(22,133,59,.1);color:#16853b;font-size:.7rem;font-weight:800}.project-scale-label{font-size:.7rem;color:#5e6b73}.project-meta{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.project-meta dt{font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;color:#5e6b73}.project-meta dd{font-size:.8rem;font-weight:700;margin-top:.2rem}
+</style>
+<script>
+(()=>{
+  const type=document.getElementById('project-type-filter');
+  const scale=document.getElementById('project-scale-filter');
+  const grid=document.getElementById('project-grid');
+  const empty=document.getElementById('project-empty-state');
+  const title=document.getElementById('project-empty-title');
+  const copy=document.getElementById('project-empty-copy');
+  if(!type||!scale||!grid||!empty) return;
+  const filter=()=>{
+    const cards=Array.from(grid.querySelectorAll('[data-project-card]'));
+    let shown=0;
+    cards.forEach(card=>{const match=(type.value==='all'||card.dataset.projectType===type.value)&&(scale.value==='all'||card.dataset.projectScale===scale.value);card.hidden=!match;if(match)shown++;});
+    empty.classList.toggle('hidden',shown>0);
+    if(!shown){const filtered=type.value!=='all'||scale.value!=='all';title.textContent=filtered?'No published projects match these filters':'No published projects yet';copy.textContent=filtered?'Try another project type or scale, or contact iSCOOP to discuss your requirements.':'We’re preparing project stories with verified scope and delivery details. Check back soon to explore the portfolio.';}
+  };
+  [type,scale].forEach(control=>control.addEventListener('change',filter));
+  filter();
+})();
+</script>
+<script src="script.js"></script>
+</body>
+</html>

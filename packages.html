@@ -98,6 +98,39 @@
   </div>
 </section>
 <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="rounded-3xl bg-ink text-white p-6 sm:p-9 mb-10 reveal">
+    <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">Package finder</span>
+    <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Find one or two starting points.</h2>
+    <p class="text-sm text-slate-300 mt-2 max-w-3xl">Share a few basics. This rule-based guide narrows the approved package schedule; it is not a system design or runtime promise.</p>
+    <form data-package-finder class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+      <div><label for="find-property" class="block text-xs font-bold mb-1.5">Property type</label><select id="find-property" data-find-property class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="home">Home</option><option value="business">Business / SME</option><option value="commercial">Commercial / institution</option><option value="portable">Portable / essential use</option></select></div>
+      <div><label for="find-budget" class="block text-xs font-bold mb-1.5">Budget range</label><select id="find-budget" data-find-budget class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="">Not sure yet</option><option value="0-1000000">Under ₦1m</option><option value="1000000-2500000">₦1m–₦2.5m</option><option value="2500000-5500000">₦2.5m–₦5.5m</option><option value="5500000-12000000">₦5.5m–₦12m</option><option value="12000000-20000000">₦12m+</option></select></div>
+      <div><label for="find-lights" class="block text-xs font-bold mb-1.5">Lights</label><select id="find-lights" data-find-lights class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="">Not sure</option><option value="6">Up to 6</option><option value="7">7–10</option><option value="11">11–15</option><option value="16">16+</option></select></div>
+      <div><label for="find-fans" class="block text-xs font-bold mb-1.5">Fans</label><select id="find-fans" data-find-fans class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="">Not sure</option><option value="1">1–2</option><option value="3">3–4</option><option value="5">5+</option></select></div>
+      <div><label for="find-refrigeration" class="block text-xs font-bold mb-1.5">Refrigeration</label><select id="find-refrigeration" data-find-refrigeration class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="any">Not sure</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+      <div><label for="find-pump" class="block text-xs font-bold mb-1.5">Water pump</label><select id="find-pump" data-find-pump class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="any">Not sure</option><option value="yes">Yes</option><option value="no">No</option></select></div>
+      <div><label for="find-ac" class="block text-xs font-bold mb-1.5">Air-conditioning</label><select id="find-ac" data-find-ac class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="any">Not sure</option><option value="none">No AC</option><option value="one">1 AC</option><option value="two">1–2 ACs</option><option value="commercial">Commercial AC load</option></select></div>
+      <div><label for="find-evening" class="block text-xs font-bold mb-1.5">Evening usage</label><select id="find-evening" data-find-evening class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="any">Not sure</option><option value="essentials">Essential evening loads</option><option value="extended">Longer evening support</option></select></div>
+      <div class="sm:col-span-2"><label for="find-business-load" class="block text-xs font-bold mb-1.5">Business equipment</label><select id="find-business-load" data-find-business class="w-full px-3 py-3 rounded-xl bg-white text-ink"><option value="any">Not sure / home</option><option value="digital">POS, CCTV, network or computers</option><option value="production">Production or workshop equipment</option></select></div>
+      <div class="sm:col-span-2 flex flex-col sm:flex-row gap-3 items-start sm:items-end"><button type="submit" class="px-6 py-3 rounded-xl bg-lime-400 text-ink font-bold">Find starting points</button><button type="reset" class="px-5 py-3 rounded-xl bg-white/10 text-white font-bold">Clear</button></div>
+    </form>
+    <div data-finder-results class="grid md:grid-cols-2 gap-4 mt-6" aria-live="polite"></div>
+    <p class="text-xs text-slate-300 mt-5">A package is only a starting point. Final sizing and suitability require a load and site assessment. Appliance examples are indicative and do not promise a fixed runtime.</p>
+  </div>
+  <div class="rounded-3xl bg-white border border-ink/10 p-5 sm:p-7 mb-6">
+    <h2 class="text-xl font-extrabold mb-4">Filter the package catalogue</h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      <div><label for="package-search" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Search packages / appliances</label><input id="package-search" type="search" data-package-search placeholder="Try fridge, 5kWh or Business 30" class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink placeholder-muted/70 focus:border-brand-500 focus:outline-none"></div>
+      <div><label for="package-category" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Use type</label><select id="package-category" data-package-category class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink"><option value="all">All use types</option><option value="portable">Portable</option><option value="home">Home</option><option value="large-home">Large Home</option><option value="business">Business / SME</option><option value="commercial">Commercial</option></select></div>
+      <div><label for="package-budget" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Budget range</label><select id="package-budget" data-package-budget class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink"><option value="all">Any price</option><option value="0-1000000">Under ₦1m</option><option value="1000000-2500000">₦1m–₦2.5m</option><option value="2500000-5500000">₦2.5m–₦5.5m</option><option value="5500000-12000000">₦5.5m–₦12m</option><option value="12000000-20000000">₦12m+</option></select></div>
+      <div><label for="package-battery" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Battery storage</label><select id="package-battery" data-package-battery class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink"><option value="all">Any capacity</option><option value="1">1kWh</option><option value="1.2">1.2kWh</option><option value="2.5">2.5kWh</option><option value="5">5kWh</option><option value="10">10kWh</option><option value="15">15kWh</option><option value="30">30kWh</option><option value="45">45kWh</option></select></div>
+      <div><label for="package-ac" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Air-conditioning examples</label><select id="package-ac" data-package-ac class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink"><option value="all">Any</option><option value="no-ac">No AC shown</option><option value="limited-ac">Limited AC</option><option value="one-ac">1 AC example</option><option value="two-ac">1–2 AC examples</option><option value="commercial-ac">Commercial AC load</option></select></div>
+      <div><label for="package-appliance" class="block text-xs font-bold uppercase tracking-wider text-ink/70 mb-1.5">Appliance need</label><select id="package-appliance" data-package-appliance class="w-full px-4 py-3 rounded-xl bg-cream border border-ink/10 text-ink"><option value="all">Any appliance</option><option value="refrigeration">Refrigeration</option><option value="pump">Pump</option><option value="washing">Washing machine</option><option value="digital">POS / CCTV / IT</option><option value="ac">Air-conditioning</option></select></div>
+    </div>
+  </div>
+  <p data-package-count class="text-sm text-muted mb-4" aria-live="polite"></p>
+  <div data-package-cards class="grid md:grid-cols-2 xl:grid-cols-3 gap-5"></div>
+  <div data-commercial-note class="hidden mt-5 p-6 rounded-2xl bg-[#e8f4e9] border border-brand-500/15"><p class="font-bold">Commercial projects are sized to the site and operating profile.</p><p class="text-sm text-muted mt-2">Use the Business & Commercial assessment route for an energy audit and custom scope.</p><a href="quote.html?type=commercial" class="inline-flex mt-4 text-brand-500 font-bold">Discuss a commercial project →</a></div>
   <div class="rounded-3xl bg-white border border-ink/10 shadow-framer overflow-hidden reveal">
     <div class="overflow-x-auto">
       <table class="package-table w-full min-w-[1100px] text-left">
@@ -150,7 +183,7 @@
       <td class="p-4 sm:p-5 font-bold text-brand-500">Scale 10</td>
       <td class="p-4 sm:p-5 text-sm text-ink/80">6kW hybrid inverter + 10kWh lithium battery + 6 solar panels + accessories and installation</td>
       <td class="p-4 sm:p-5 font-extrabold whitespace-nowrap">₦4,560,000</td>
-      <td class="p-4 sm:p-5 text-sm text-muted">Whole-home essentials, refrigerator and freezer, multiple TVs/fans, office devices, washing machine, small pump, plus one 1–1.5HP efficient inverter AC for several hours under managed loading.</td>
+      <td class="p-4 sm:p-5 text-sm text-muted">Whole-home essentials, refrigerator and freezer, multiple TVs/fans, office devices, washing machine, small pump, plus one 1–1.5HP efficient inverter AC on managed loading, subject to load assessment.</td>
       <td class="p-4 sm:p-5 text-sm text-muted">Two smaller inverter ACs may be possible for shorter managed periods after a load audit. Panel wattage was not stated in the supplied package schedule.</td>
     </tr><tr class="bg-white hover:bg-cream transition-colors">
       <td class="p-4 sm:p-5 font-bold text-brand-500">Scale 15</td>
@@ -203,6 +236,7 @@
         <li><a href="packages.html" class="hover:text-white">Packages</a></li>
         <li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li>
         <li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li>
+        <li><a href="projects.html" class="hover:text-white">Projects</a></li>
       </ul>
     </div>
     <div>

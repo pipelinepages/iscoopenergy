@@ -101,19 +101,22 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
   <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
     <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 p-6 sm:p-9 shadow-framer reveal">
-      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Explore a package</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">See a simple payment split</h2><p class="text-sm text-muted font-body mt-2">Adjust the package, upfront contribution and period to see how the remaining package price divides. No provider interest or fees are included.</p>
+      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Explore a package</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">See an illustrative finance estimate</h2><p class="text-sm text-muted font-body mt-2">Estimate uses a minimum 30% deposit, 4% flat monthly interest and a 3% admin fee on the financed amount. Select a package and period to see the breakdown.</p>
       <div class="grid sm:grid-cols-2 gap-4 mt-6">
         <div><label for="estimate-package" class="label">iSCOOP package</label><select id="estimate-package" class="field"><option value="490000">Portable 500 — ₦490,000</option><option value="590000">Portable 1K — ₦590,000</option><option value="905000">Essential 1.5 — ₦905,000</option><option value="1155000">Essential Plus — ₦1,155,000</option><option value="1560000">Comfort 2.5 — ₦1,560,000</option><option value="2485000" selected>Comfort 5 — ₦2,485,000</option><option value="3250000">Scale 5 — ₦3,250,000</option><option value="4560000">Scale 10 — ₦4,560,000</option><option value="5500000">Scale 15 — ₦5,500,000</option><option value="11090000">Business 30 — ₦11,090,000</option><option value="15770000">Business 45 — ₦15,770,000</option><option value="0">Custom / commercial — assessment required</option></select></div>
         <div><label for="estimate-period" class="label">Example repayment period</label><select id="estimate-period" class="field"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option></select></div>
-        <div><label for="estimate-contribution" class="label">Illustrative upfront contribution</label><select id="estimate-contribution" class="field"><option value="0">0%</option><option value="10">10%</option><option value="20" selected>20%</option><option value="30">30%</option></select><p class="text-xs text-muted mt-1.5">A planning assumption only, not a provider requirement.</p></div>
+        <div><label for="estimate-contribution" class="label">Deposit</label><select id="estimate-contribution" class="field"><option value="30" selected>30% (minimum)</option><option value="40">40%</option><option value="50">50%</option><option value="60">60%</option></select><p class="text-xs text-muted mt-1.5">Minimum deposit is 30% of the package price.</p></div>
       </div>
       <div class="mt-6 rounded-2xl bg-[#e8f4e9] border border-brand-500/15 p-5 sm:p-6">
-        <div class="grid sm:grid-cols-3 gap-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div><span class="text-xs text-muted block">Package price</span><strong id="estimate-price" class="text-lg">₦2,485,000</strong></div>
-          <div><span class="text-xs text-muted block">Illustrative upfront</span><strong id="estimate-upfront" class="text-lg">₦497,000</strong></div>
-          <div><span class="text-xs text-muted block">Balance ÷ selected period</span><strong id="estimate-monthly" class="text-lg text-brand-600">₦132,533 / month</strong></div>
+          <div><span class="text-xs text-muted block">Deposit</span><strong id="estimate-upfront" class="text-lg">₦745,500</strong></div>
+          <div><span class="text-xs text-muted block">Amount financed</span><strong id="estimate-finance" class="text-lg">₦1,739,500</strong></div>
+          <div><span class="text-xs text-muted block">Flat interest (4% monthly)</span><strong id="estimate-interest" class="text-lg">₦834,960</strong></div>
+          <div><span class="text-xs text-muted block">Admin fee (3%)</span><strong id="estimate-fee" class="text-lg">₦52,185</strong></div>
+          <div><span class="text-xs text-muted block">Estimated monthly instalment</span><strong id="estimate-monthly" class="text-lg text-brand-600">₦218,888 / month</strong></div>
         </div>
-        <p id="estimate-note" aria-live="polite" class="text-xs text-muted mt-4">Simple division of the balance before provider interest, fees or other charges. This is not a repayment quote or an offer of finance.</p>
+        <p id="estimate-note" aria-live="polite" class="text-xs text-muted mt-4">Estimate uses the selected period and the assumptions above. Provider assessment and written terms determine the final deposit, interest, fees and repayment amount.</p>
       </div>
       <a href="#finance-application" id="estimate-apply" class="inline-flex mt-5 px-5 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Continue with this package</a>
     </div>
@@ -173,7 +176,7 @@
       <div><label for="finance-location" class="label">Location</label><input id="finance-location" required autocomplete="address-level2" class="field" type="text" placeholder="City / state"></div>
       <div><label for="finance-package" class="label">Package or sizing request</label><select id="finance-package" required class="field"><option value="">Choose a package or custom sizing</option><option>Portable 500</option><option>Portable 1K</option><option>Essential 1.5</option><option>Essential Plus</option><option>Comfort 2.5</option><option>Comfort 5</option><option>Scale 5</option><option>Scale 10</option><option>Scale 15</option><option>Business 30</option><option>Business 45</option><option>Request custom sizing</option></select></div>
       <div><label for="finance-referral" class="label">How did you hear about iSCOOP? (optional)</label><select id="finance-referral" class="field"><option value="">Select one</option><option>Search engine</option><option>Social media</option><option>Referral</option><option>Event</option><option>Other</option></select></div>
-      <div><label for="finance-contribution" class="label">Preferred upfront contribution band</label><select id="finance-contribution" required class="field"><option value="">Select a preferred range</option><option>Not sure yet</option><option>0–10%</option><option>11–20%</option><option>21–30%</option><option>More than 30%</option></select><p class="text-xs text-muted mt-1.5">This is your preference only, not a provider-specific equity requirement.</p></div>
+      <div><label for="finance-contribution" class="label">Preferred upfront contribution band</label><select id="finance-contribution" required class="field"><option value="">Select a preferred range</option><option>Not sure yet</option><option>30–39%</option><option>40–49%</option><option>50–59%</option><option>60% or more</option></select><p class="text-xs text-muted mt-1.5">The calculator uses a 30% minimum deposit. Final contribution terms are confirmed in writing.</p></div>
       <div class="sm:col-span-2"><label for="finance-notes" class="label">System needs or custom sizing notes (optional)</label><textarea id="finance-notes" rows="3" class="field resize-y" placeholder="Tell us what you need to power or any sizing questions."></textarea></div>
       <div class="sm:col-span-2 p-4 rounded-xl bg-white border border-ink/10">
         <label for="finance-consent" class="flex items-start gap-3 text-sm text-ink/80"><input id="finance-consent" required type="checkbox" class="mt-1 accent-brand-500"><span>I consent to iSCOOP reviewing this finance enquiry and sharing the information I provided with suitable third-party finance provider(s) for the purpose of assessing possible finance options. I understand that providers may conduct their own checks and make their own decisions.</span></label>
@@ -197,7 +200,7 @@
 <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20">
   <div class="rounded-3xl bg-[#e8f4e9] border border-brand-500/15 p-6 sm:p-10 reveal">
     <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Finance disclaimer</span>
-    <p class="text-ink/75 font-body leading-relaxed mt-3 max-w-4xl">Finance is subject to eligibility, credit assessment and partner approval. Interest, fees, contribution and tenor vary by applicant and provider. iSCOOP does not guarantee credit approval.</p>
+    <p class="text-ink/75 font-body leading-relaxed mt-3 max-w-4xl">Finance is subject to eligibility, credit assessment and partner approval. The calculator illustrates a minimum 30% deposit, 4% flat monthly interest and a 3% administration fee on the financed amount. Providers confirm final terms in writing, and iSCOOP does not guarantee credit approval.</p>
     <a href="#finance-application" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold hover:bg-brand-600">Start a finance enquiry →</a>
   </div>
 </section>
@@ -209,6 +212,9 @@
   const contribution=document.getElementById('estimate-contribution');
   const priceOut=document.getElementById('estimate-price');
   const upfrontOut=document.getElementById('estimate-upfront');
+  const financeOut=document.getElementById('estimate-finance');
+  const interestOut=document.getElementById('estimate-interest');
+  const feeOut=document.getElementById('estimate-fee');
   const monthlyOut=document.getElementById('estimate-monthly');
   const note=document.getElementById('estimate-note');
   const apply=document.getElementById('estimate-apply');
@@ -220,11 +226,17 @@
     const months=Number(period.value);
     const percent=Number(contribution.value);
     const upfront=Math.round(total*percent/100);
-    const balance=total-upfront;
+    const financed=total-upfront;
+    const interest=Math.round(financed*0.04*months);
+    const adminFee=Math.round(financed*0.03);
+    const monthly=Math.ceil((financed+interest+adminFee)/months);
     priceOut.textContent=total?naira.format(total):'Assessment required';
     upfrontOut.textContent=total?naira.format(upfront):'To be assessed';
-    monthlyOut.textContent=total?naira.format(Math.ceil(balance/months))+' / month':'Custom quote';
-    note.textContent=total?'Simple division of the balance before provider interest, fees or other charges. This is not a repayment quote or an offer of finance.':'Commercial and custom systems require a site and load assessment. Final scope and any finance terms are confirmed separately.';
+    financeOut.textContent=total?naira.format(financed):'To be assessed';
+    interestOut.textContent=total?naira.format(interest):'To be assessed';
+    feeOut.textContent=total?naira.format(adminFee):'To be assessed';
+    monthlyOut.textContent=total?naira.format(monthly)+' / month':'Custom quote';
+    note.textContent=total?'Illustration uses 4% flat interest per month on the financed amount and a one-time admin fee of 3% of that amount. Final terms are subject to provider assessment and written confirmation.':'Commercial and custom systems require a site and load assessment. Final scope and any finance terms are confirmed separately.';
     if(formPackage&&total){
       const selected=pkg.options[pkg.selectedIndex].text.split(' — ')[0];
       Array.from(formPackage.options).forEach(option=>{if(option.text===selected) formPackage.value=option.value;});

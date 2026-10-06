@@ -695,7 +695,10 @@
     #package-scroller > div:nth-child(1), #package-scroller > div:nth-child(6), #package-scroller > div:nth-child(8), #package-scroller > div:nth-child(11) { width:100%; max-width:none; }
     #packages button[id^="pkg-"] { display:none; }
     @media (min-width: 768px) and (max-width: 1023px) { #package-scroller { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media (max-width: 767px) { #package-scroller { grid-template-columns:1fr; } }
+    @media (max-width: 767px) {
+      #package-scroller { display:flex; grid-template-columns:none; overflow-x:auto; overflow-y:hidden; scroll-snap-type:x mandatory; overscroll-behavior-x:contain; }
+      #package-scroller > div:nth-child(1), #package-scroller > div:nth-child(6), #package-scroller > div:nth-child(8), #package-scroller > div:nth-child(11) { flex:0 0 min(85vw,340px); width:min(85vw,340px); max-width:none; scroll-snap-align:start; }
+    }
   </style>
   <script src="script.js"></script>
   <script>

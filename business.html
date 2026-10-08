@@ -91,18 +91,26 @@
   </div>
 </section>
 <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
-  <div class="grid lg:grid-cols-2 gap-6 lg:gap-8">
-    <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer reveal">
-      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Suitable for</span>
-      <div class="grid sm:grid-cols-2 gap-3 mt-6">
-        <div class="biz">Retail stores</div><div class="biz">Supermarkets</div><div class="biz">Pharmacies</div><div class="biz">Clinics</div><div class="biz">Salons</div><div class="biz">Restaurants</div><div class="biz">POS / agent locations</div><div class="biz">Offices</div><div class="biz">Schools</div><div class="biz">Workshops</div><div class="biz">Small hospitality businesses</div>
-      </div>
+  <div class="rounded-3xl bg-white border border-ink/10 p-5 sm:p-7 shadow-framer mb-6 reveal">
+    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Suitable for</span>
+    <div class="flex flex-wrap gap-2.5 mt-4"><span class="biz">Retail stores</span><span class="biz">Supermarkets</span><span class="biz">Pharmacies</span><span class="biz">Clinics</span><span class="biz">Salons</span><span class="biz">Restaurants</span><span class="biz">POS / agent locations</span><span class="biz">Offices</span><span class="biz">Schools</span><span class="biz">Workshops</span><span class="biz">Small hospitality businesses</span></div>
+  </div>
+  <div class="rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-6 sm:p-9 lg:p-10 text-white shadow-framer reveal">
+    <div class="max-w-4xl"><span class="text-lime-400 font-bold text-xs uppercase tracking-widest">What the assessment considers</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">The load assessment sizes the system around how your business uses energy.</h2></div>
+    <h3 class="text-lg font-bold mt-8">The 3 key objectives of a load assessment</h3>
+    <div class="grid md:grid-cols-3 gap-3 mt-4">
+      <div class="assessment-objective"><span>01</span><strong>Inverter size (kW)</strong><p>Set from the peak load expected to run at the same time.</p></div>
+      <div class="assessment-objective"><span>02</span><strong>Battery size (kWh)</strong><p>Set from the energy required during nighttime or other periods without solar generation.</p></div>
+      <div class="assessment-objective"><span>03</span><strong>Solar panel size (kWp)</strong><p>Set from total daily energy use and the site’s solar resource.</p></div>
     </div>
-    <div class="rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-6 sm:p-10 text-white shadow-framer reveal">
-      <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">What the assessment considers</span>
-      <ul class="mt-6 space-y-3 text-sm text-slate-300 font-body">
-        <li>Opening hours</li><li>Generator/grid spend</li><li>Refrigeration</li><li>AC load</li><li>Pumps</li><li>POS / CCTV / networking</li><li>Computers</li><li>Production equipment</li><li>Peak demand</li><li>Desired backup period</li>
-      </ul>
+    <h3 class="text-lg font-bold mt-9">General data collected</h3>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 mt-4">
+      <article class="assessment-detail"><h4><span>A</span> Load inventory</h4><p>List every appliance and piece of equipment intended to run on the system. Record its rated power in watts (W) from the nameplate where available.</p></article>
+      <article class="assessment-detail"><h4><span>B</span> Operational time</h4><p>Estimate how many hours per day each load operates. This converts power to energy: <strong>Energy (Wh) = Power (W) × Time (h)</strong>.</p></article>
+      <article class="assessment-detail"><h4><span>C</span> Load classification</h4><p><strong>Resistive:</strong> heating elements and incandescent lamps. Record electronic loads such as TVs from their nameplates; they do not have the motor/compressor starting surge. <strong>Motors and compressors:</strong> air conditioners, refrigerators and pumps may draw inrush current around 3–7× rated power for a few seconds, depending on the equipment. Separate critical and non-critical loads for prioritisation.</p></article>
+      <article class="assessment-detail"><h4><span>D</span> Demand analysis</h4><p><strong>Connected load:</strong> sum of rated loads. <strong>Peak demand:</strong> maximum load expected to operate simultaneously and a key input to inverter sizing. Apply a diversity factor based on realistic operating patterns, since not all loads run at once.</p></article>
+      <article class="assessment-detail"><h4><span>E</span> Time and seasonal patterns</h4><p>Separate daytime and nighttime energy use: daytime demand can be met by solar generation, while nighttime demand needs stored energy or another source. Account for seasonal changes in usage and generation.</p></article>
+      <article class="assessment-detail"><h4><span>F</span> Losses and design margins</h4><p>Include suitable allowance for future expansion and system losses. The supplied planning guidance uses a 20–25% buffer; final margins depend on the design. Account for inverter efficiency (commonly around 90–95%, model-dependent) and usable battery capacity based on the selected battery’s depth-of-discharge limits.</p></article>
     </div>
   </div>
 </section>
@@ -127,7 +135,7 @@
     </div>
   </div>
 </section>
-<style>.biz{padding:.9rem 1rem;border-radius:1rem;background:#f5f7f2;border:1px solid rgba(6,19,29,.08);font-size:.875rem;font-weight:600}</style>
+<style>.biz{padding:.7rem .9rem;border-radius:999px;background:#f5f7f2;border:1px solid rgba(6,19,29,.08);font-size:.8rem;font-weight:600}.assessment-objective,.assessment-detail{padding:1.1rem 1.2rem;border-radius:1rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.assessment-objective span{display:block;color:#b8d83e;font-size:.7rem;font-weight:800;letter-spacing:.1em}.assessment-objective strong{display:block;font-size:1.05rem;margin-top:.35rem}.assessment-objective p,.assessment-detail p{font:400 .82rem/1.6 "DM Sans",sans-serif;color:#cbd5d8;margin-top:.45rem}.assessment-detail h4{font-size:.95rem;font-weight:800;color:#fff}.assessment-detail h4 span{display:inline-flex;width:1.5rem;height:1.5rem;align-items:center;justify-content:center;border-radius:.5rem;background:#b8d83e;color:#06131d;font-size:.75rem;margin-right:.4rem}.assessment-detail p strong{color:#fff}</style>
 </main>
 <footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8 mt-10">
   <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-12">

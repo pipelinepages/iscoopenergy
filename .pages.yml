@@ -1,0 +1,76 @@
+media:
+  - name: project-images
+    label: Project images
+    input: assets/projects
+    output: assets/projects
+    extensions: [jpg, jpeg, png, webp, avif]
+    rename: safe
+
+content:
+  - name: projects
+    label: Projects
+    type: file
+    path: data/projects.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Project title
+        type: string
+        required: true
+      - name: summary
+        label: Project summary
+        type: text
+        required: true
+      - name: image
+        label: Project image
+        type: image
+        options:
+          media: project-images
+          extensions: [jpg, jpeg, png, webp, avif]
+      - name: image_alt
+        label: Image description
+        type: string
+      - name: type
+        label: Project type
+        type: select
+        required: true
+        options:
+          values:
+            - name: residential
+              label: Residential
+            - name: business-sme
+              label: Business & SME
+            - name: commercial-institutional
+              label: Commercial & Institutions
+            - name: epc-infrastructure
+              label: EPC / Infrastructure
+      - name: scale
+        label: Project scale
+        type: select
+        required: true
+        options:
+          values:
+            - name: home
+              label: Home-scale
+            - name: small-business
+              label: Small business
+            - name: commercial
+              label: Commercial
+            - name: large-custom
+              label: Large / custom
+      - name: location
+        label: Location
+        type: string
+        required: true
+      - name: scope
+        label: System scope
+        type: string
+        required: true
+      - name: url
+        label: Project details link
+        type: string
+        description: Use a relative site path or an https URL. Leave blank if the project has no detail page.
+      - name: published
+        label: Publish on website
+        type: boolean

@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "title": "test",
+    "summary": "test",
+    "type": "commercial-institutional",
+    "scale": "large-custom",
+    "location": "Lagos, Nigeria",
+    "scope": "test",
+    "published": true
+  }
+]

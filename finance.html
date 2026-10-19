@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/iscoop-logo.png">
+  <title>Flexible Solar Finance | iSCOOP</title>
+  <meta name="description" content="Explore finance options for eligible iSCOOP solar customers. Terms are subject to lender assessment and approval.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config={
+      darkMode:'class',
+      theme:{extend:{fontFamily:{sans:['"Plus Jakarta Sans"','sans-serif'],body:['"DM Sans"','sans-serif']},
+      colors:{brand:{50:'#eef7ee',100:'#d8ecd9',200:'#b3d9b6',300:'#27b957',400:'#16853b',500:'#16853b',600:'#106d2f',700:'#0d5a26',800:'#0a4720',900:'#07361a',950:'#052e16'},lime:{300:'#d3e878',400:'#b8d83e',500:'#9db82a'},ink:'#06131d',cream:'#f5f7f2',muted:'#5e6b73'},
+      boxShadow:{framer:'0 20px 50px -10px rgba(6,19,29,.12),0 0 0 1px rgba(6,19,29,.06) inset',glass:'0 8px 32px rgba(6,19,29,.08)'}}}
+    };
+  </script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-brand-400 selection:text-white overflow-x-hidden">
+
+<div class="page-glow"></div>
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-8">
+  <div class="max-w-7xl mx-auto flex items-center justify-between backdrop-blur-xl bg-white/80 border border-ink/10 rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3.5 shadow-glass">
+    <a href="index.html" class="flex items-center" aria-label="iSCOOP home">
+      <img src="assets/iscoop-logo.png" alt="iSCOOP EPC - Renewable Energy Company" class="w-[96px] sm:w-[118px] h-auto">
+    </a>
+    <nav class="hidden lg:flex items-center gap-1">
+      <a href="index.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Home</a>
+      <div class="relative group">
+        <button type="button" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors flex items-center gap-1.5">
+          Solutions
+          <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </button>
+        <div class="absolute top-full left-0 w-72 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+          <div class="pt-2">
+            <div class="p-2 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl">
+              <a href="homes.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Homes</div><div class="text-xs text-muted">Residential solar sized around your actual load</div></a>
+              <a href="business.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Business & SME</div><div class="text-xs text-muted">Keep critical business loads moving</div></a>
+              <a href="commercial.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Commercial & Institutions</div><div class="text-xs text-muted">End-to-end renewable-energy EPC delivery</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a href="packages.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Packages</a>
+      <a href="finance.html" class="px-4 py-2 rounded-xl text-sm font-medium text-brand-500 bg-brand-500/10 transition-colors">Flexible Finance</a>
+      <a href="epc-services.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">EPC Services</a>
+      <a href="support.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Support</a>
+      <a href="about.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">About</a>
+    </nav>
+    <div class="hidden sm:flex items-center gap-3">
+      <a href="service-request.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-ink/70 hover:text-ink hover:bg-ink/5 transition-all border border-ink/10">Service Request</a>
+      <a href="quote.html" class="px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-500 shadow-lg shadow-brand-500/25 hover:bg-brand-600 hover:shadow-brand-500/40 hover:scale-[1.02] transition-all">
+        Get Your Solar Plan
+      </a>
+    </div>
+    <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-ink/10 text-ink/80 hover:bg-cream active:scale-95 transition-all" aria-label="Toggle menu">
+      <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 p-3 sm:p-4 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl space-y-1 max-h-[calc(100vh-120px)] overflow-y-auto">
+    <a href="index.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Home</a>
+    <div class="pt-2 px-4 text-[10px] font-bold uppercase tracking-widest text-muted">Solutions</div>
+    <a href="homes.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Homes</a>
+    <a href="business.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Business & SME</a>
+    <a href="commercial.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Commercial & Institutions</a>
+    <a href="packages.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Packages</a>
+    <a href="finance.html" class="block px-4 py-3 rounded-xl font-medium text-brand-500 bg-brand-500/10">Flexible Finance</a>
+    <a href="epc-services.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">EPC Services</a>
+    <a href="support.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Support</a>
+    <a href="about.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">About</a>
+    <a href="faq.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">FAQ</a>
+    <div class="pt-2 border-t border-ink/10 flex gap-2">
+      <a href="service-request.html" class="flex-1 text-center py-3 rounded-xl font-bold text-ink bg-cream">Service Request</a>
+      <a href="quote.html" class="flex-1 text-center py-3 rounded-xl font-bold text-white bg-brand-500">Get Your Solar Plan</a>
+    </div>
+  </div>
+</header>
+<main class="relative z-10 pt-28 sm:pt-32 lg:pt-40">
+<section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-20">
+  <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    <div class="lg:col-span-7 reveal">
+      <span class="inline-flex px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-600 text-[10px] sm:text-xs font-bold tracking-widest uppercase">FLEXIBLE FINANCE</span>
+      <h1 class="text-[2.3rem] leading-[1.06] sm:text-6xl lg:text-7xl font-extrabold tracking-tight mt-5 text-balance text-black">A clearer way to explore solar finance</h1>
+      <p class="text-base sm:text-lg text-muted font-body leading-relaxed mt-5 max-w-2xl">Choose an iSCOOP package, explore a simple payment split, and share your details for review. Where appropriate, iSCOOP can route an enquiry to suitable finance providers, who set their own terms and make their own decisions.</p>
+      <div class="flex flex-col sm:flex-row gap-3 mt-7"><a href="#finance-application" class="px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold text-center hover:bg-brand-600">Apply for a solar package</a><a href="packages.html" class="px-6 py-3.5 rounded-2xl bg-white border border-ink/10 text-ink font-bold text-center hover:bg-cream">Explore packages</a></div>
+    </div>
+    <div class="lg:col-span-5 reveal"><img src="assets/finance-options-dashboard.png" alt="iSCOOP solar financing options for home, commercial and industrial energy systems" class="block w-full h-auto rounded-3xl border border-ink/10 shadow-framer" fetchpriority="high"></div>
+  </div>
+</section>
+<section aria-label="iSCOOP finance service features" class="max-w-7xl mx-auto px-4 sm:px-8 pb-10">
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div class="rounded-2xl bg-white border border-ink/10 p-4"><strong class="text-sm">Provider-neutral guidance</strong><p class="text-xs text-muted mt-1">Explore options without public lender promotions.</p></div>
+    <div class="rounded-2xl bg-white border border-ink/10 p-4"><strong class="text-sm">Package-led estimates</strong><p class="text-xs text-muted mt-1">Start with published iSCOOP package prices.</p></div>
+    <div class="rounded-2xl bg-white border border-ink/10 p-4"><strong class="text-sm">Clear assessment steps</strong><p class="text-xs text-muted mt-1">Know what happens before a provider decision.</p></div>
+    <div class="rounded-2xl bg-white border border-ink/10 p-4"><strong class="text-sm">EPC delivery context</strong><p class="text-xs text-muted mt-1">Finance sits alongside system assessment and installation.</p></div>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="grid lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+    <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 p-6 sm:p-9 shadow-framer reveal">
+      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Explore a package</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">See an illustrative finance estimate</h2><p class="text-sm text-muted font-body mt-2">Estimate uses a minimum 30% deposit, 4% flat monthly interest and a 3% admin fee on the financed amount. Select a package and period to see the breakdown.</p>
+      <div class="grid sm:grid-cols-2 gap-4 mt-6">
+        <div><label for="estimate-package" class="label">iSCOOP package</label><select id="estimate-package" class="field"><option value="490000">Portable 500 — ₦490,000</option><option value="590000">Portable 1K — ₦590,000</option><option value="905000">Essential 1.5 — ₦905,000</option><option value="1155000">Essential Plus — ₦1,155,000</option><option value="1560000">Comfort 2.5 — ₦1,560,000</option><option value="2485000" selected>Comfort 5 — ₦2,485,000</option><option value="3250000">Scale 5 — ₦3,250,000</option><option value="4560000">Scale 10 — ₦4,560,000</option><option value="5500000">Scale 15 — ₦5,500,000</option><option value="11090000">Business 30 — ₦11,090,000</option><option value="15770000">Business 45 — ₦15,770,000</option><option value="0">Custom / commercial — assessment required</option></select></div>
+        <div><label for="estimate-period" class="label">Example repayment period</label><select id="estimate-period" class="field"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option></select></div>
+        <div><label for="estimate-contribution" class="label">Deposit</label><select id="estimate-contribution" class="field"><option value="30" selected>30% (minimum)</option><option value="40">40%</option><option value="50">50%</option><option value="60">60%</option></select><p class="text-xs text-muted mt-1.5">Minimum deposit is 30% of the package price.</p></div>
+      </div>
+      <div class="mt-6 rounded-2xl bg-[#e8f4e9] border border-brand-500/15 p-5 sm:p-6">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div><span class="text-xs text-muted block">Package price</span><strong id="estimate-price" class="text-lg">₦2,485,000</strong></div>
+          <div><span class="text-xs text-muted block">Deposit</span><strong id="estimate-upfront" class="text-lg">₦745,500</strong></div>
+          <div><span class="text-xs text-muted block">Amount financed</span><strong id="estimate-finance" class="text-lg">₦1,739,500</strong></div>
+          <div><span class="text-xs text-muted block">Flat interest (4% monthly)</span><strong id="estimate-interest" class="text-lg">₦834,960</strong></div>
+          <div><span class="text-xs text-muted block">Admin fee (3%)</span><strong id="estimate-fee" class="text-lg">₦52,185</strong></div>
+          <div><span class="text-xs text-muted block">Estimated monthly instalment</span><strong id="estimate-monthly" class="text-lg text-brand-600">₦218,888 / month</strong></div>
+        </div>
+        <p id="estimate-note" aria-live="polite" class="text-xs text-muted mt-4">Estimate uses the selected period and the assumptions above. Provider assessment and written terms determine the final deposit, interest, fees and repayment amount.</p>
+      </div>
+      <a href="#finance-application" id="estimate-apply" class="inline-flex mt-5 px-5 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Continue with this package</a>
+    </div>
+    <aside id="finance-steps" class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#0a2029] via-[#073f2a] to-[#101a18] p-6 sm:p-9 text-white shadow-framer reveal">
+      <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">How it works</span><h2 class="text-2xl sm:text-3xl font-extrabold mt-2">From enquiry to installation</h2>
+      <ol class="mt-6 space-y-5">
+        <li class="flex gap-3"><b class="step-number">1</b><div><strong class="text-sm">Apply online or call</strong><p class="text-xs text-slate-300 mt-1">Choose a package and share your basic profile.</p></div></li>
+        <li class="flex gap-3"><b class="step-number">2</b><div><strong class="text-sm">Site assessment and design</strong><p class="text-xs text-slate-300 mt-1">Confirm the load and the right system configuration.</p></div></li>
+        <li class="flex gap-3"><b class="step-number">3</b><div><strong class="text-sm">Provider assessment</strong><p class="text-xs text-slate-300 mt-1">With your consent, suitable providers assess eligibility and terms.</p></div></li>
+        <li class="flex gap-3"><b class="step-number">4</b><div><strong class="text-sm">Professional installation</strong><p class="text-xs text-slate-300 mt-1">iSCOOP delivers the agreed installation scope.</p></div></li>
+        <li class="flex gap-3"><b class="step-number">5</b><div><strong class="text-sm">Commissioning and support</strong><p class="text-xs text-slate-300 mt-1">Handover and after-sales support for your system.</p></div></li>
+      </ol>
+      <p class="text-xs text-slate-300 mt-6 border-t border-white/15 pt-4">Finance approval is made by the provider. Installation proceeds according to the agreed project scope and payment arrangements.</p>
+    </aside>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="grid lg:grid-cols-12 gap-6 lg:gap-8">
+    <div class="lg:col-span-7 rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer reveal">
+      <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">How it works</span>
+      <div class="mt-7 space-y-4">
+        <div class="step"><b>01</b><div><strong>Select a package or request custom sizing</strong><p>Choose a published package or tell us what you need assessed.</p></div></div>
+        <div class="step"><b>02</b><div><strong>Share your profile</strong><p>Tell us your customer type, employment or business status, monthly income or turnover range and location.</p></div></div>
+        <div class="step"><b>03</b><div><strong>Choose a preferred contribution band</strong><p>Share an estimate of what you may contribute upfront. This is a preference, not a provider rule or offer.</p></div></div>
+        <div class="step"><b>04</b><div><strong>Consent to appropriate data sharing</strong><p>We ask permission to share the application details with suitable finance providers for assessment.</p></div></div>
+        <div class="step"><b>05</b><div><strong>iSCOOP reviews the enquiry</strong><p>We confirm receipt and explain the expected next step. Receipt is not an approval or credit decision.</p></div></div>
+        <div class="step"><b>06</b><div><strong>Suitable provider matching</strong><p>Where appropriate, iSCOOP routes the enquiry to suitable provider(s) based on system value, profile and provider criteria. Each provider makes its own decision.</p></div></div>
+      </div>
+    </div>
+    <div class="lg:col-span-5 rounded-3xl bg-gradient-to-br from-[#0a2029] via-[#073f2a] to-[#101a18] p-6 sm:p-10 text-white shadow-framer reveal">
+      <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">What may affect approval</span>
+      <ul class="mt-6 space-y-4 text-sm text-slate-300 font-body">
+        <li><strong class="text-white">Employment/Business Profile</strong><p class="mt-1">Shows how stable and reliable your source of income is.</p></li>
+        <li><strong class="text-white">Income/Turnover</strong><p class="mt-1">Shows whether you earn enough to repay the loan.</p></li>
+        <li><strong class="text-white">Credit Assessment</strong><p class="mt-1">Reviews your past borrowing and repayment behaviour.</p></li>
+        <li><strong class="text-white">Package Value</strong><p class="mt-1">Checks whether the amount being financed matches your financial capacity.</p></li>
+        <li><strong class="text-white">Customer Contribution</strong><p class="mt-1">The amount you are expected to pay upfront from your own funds.</p></li>
+        <li><strong class="text-white">Requested Tenor</strong><p class="mt-1">The repayment period and whether the monthly payment is affordable.</p></li>
+        <li><strong class="text-white">Provider Policy</strong><p class="mt-1">The lender’s internal rules and eligibility requirements for approval.</p></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section id="finance-application" class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 lg:p-12 shadow-framer reveal">
+    <div class="max-w-3xl mb-8"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Finance enquiry</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Share the basics with iSCOOP.</h2><p class="text-muted font-body leading-relaxed mt-3">Choose a package or request custom sizing, then share profile and contribution ranges. Exact documents and eligibility checks are determined by the finance provider.</p></div>
+    <form data-form class="grid sm:grid-cols-2 gap-4 bg-cream p-5 sm:p-7 rounded-2xl border border-ink/10">
+      <p class="sm:col-span-2 text-sm text-muted">This enquiry form is a front-end preview and does not currently transmit or store your details.</p>
+      <div><label for="finance-name" class="label">Full name</label><input id="finance-name" required autocomplete="name" class="field" type="text" placeholder="Your name"></div>
+      <div><label for="finance-phone" class="label">Phone number</label><input id="finance-phone" required autocomplete="tel" class="field" type="tel" placeholder="0800 000 0000"></div>
+      <div><label for="finance-email" class="label">Email address</label><input id="finance-email" required autocomplete="email" class="field" type="email" placeholder="name@example.com"></div>
+      <div><label for="finance-customer-type" class="label">Customer type</label><select id="finance-customer-type" required class="field"><option value="">Select one</option><option>Home</option><option>Business / SME</option><option>Commercial / Institution</option></select></div>
+      <div><label for="finance-status" class="label">Employment / business status</label><select id="finance-status" required class="field"><option value="">Select one</option><option>Salaried employee</option><option>Self-employed</option><option>Business owner / director</option><option>Other</option></select></div>
+      <div><label for="finance-income" class="label">Monthly income / turnover range</label><select id="finance-income" required class="field"><option value="">Select a range</option><option>Below ₦100,000</option><option>₦100,000–₦249,999</option><option>₦250,000–₦499,999</option><option>₦500,000–₦999,999</option><option>₦1,000,000–₦4,999,999</option><option>₦5,000,000 or more</option><option>Prefer to discuss</option></select></div>
+      <div><label for="finance-bvn" class="label">BVN (optional)</label><input id="finance-bvn" class="field" type="text" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="off" placeholder="11 digits"></div>
+      <div><label for="finance-nin" class="label">NIN (optional)</label><input id="finance-nin" class="field" type="text" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" autocomplete="off" placeholder="11 digits"></div>
+      <div><label for="finance-location" class="label">Location</label><input id="finance-location" required autocomplete="address-level2" class="field" type="text" placeholder="City / state"></div>
+      <div><label for="finance-package" class="label">Package or sizing request</label><select id="finance-package" required class="field"><option value="">Choose a package or custom sizing</option><option>Portable 500</option><option>Portable 1K</option><option>Essential 1.5</option><option>Essential Plus</option><option>Comfort 2.5</option><option>Comfort 5</option><option>Scale 5</option><option>Scale 10</option><option>Scale 15</option><option>Business 30</option><option>Business 45</option><option>Request custom sizing</option></select></div>
+      <div><label for="finance-referral" class="label">How did you hear about iSCOOP? (optional)</label><select id="finance-referral" class="field"><option value="">Select one</option><option>Search engine</option><option>Social media</option><option>Referral</option><option>Event</option><option>Other</option></select></div>
+      <div><label for="finance-contribution" class="label">Preferred upfront contribution band</label><select id="finance-contribution" required class="field"><option value="">Select a preferred range</option><option>Not sure yet</option><option>30–39%</option><option>40–49%</option><option>50–59%</option><option>60% or more</option></select><p class="text-xs text-muted mt-1.5">The calculator uses a 30% minimum deposit. Final contribution terms are confirmed in writing.</p></div>
+      <div class="sm:col-span-2"><label for="finance-statements" class="label">Bank statements for the most recent 12 months (optional)</label><input id="finance-statements" class="field" type="file" accept=".pdf,.csv,.xls,.xlsx,.jpg,.jpeg,.png,application/pdf,text/csv,application/vnd.ms-excel,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,image/jpeg,image/png" multiple aria-describedby="finance-statements-help"><p id="finance-statements-help" class="text-xs text-muted mt-1.5">Upload statement files covering the prior 12 months. PDF is preferred; you can combine monthly statements into one file.</p></div>
+      <div class="sm:col-span-2"><label for="finance-notes" class="label">System needs or custom sizing notes (optional)</label><textarea id="finance-notes" rows="3" class="field resize-y" placeholder="Tell us what you need to power or any sizing questions."></textarea></div>
+      <div class="sm:col-span-2 p-4 rounded-xl bg-white border border-ink/10">
+        <label for="finance-consent" class="flex items-start gap-3 text-sm text-ink/80"><input id="finance-consent" required type="checkbox" class="mt-1 accent-brand-500"><span>I consent to iSCOOP reviewing this finance enquiry and sharing the information I provided with suitable third-party finance provider(s) for the purpose of assessing possible finance options. I understand that providers may conduct their own checks and make their own decisions.</span></label>
+      </div>
+      <div class="sm:col-span-2"><button type="submit" class="w-full sm:w-auto px-7 py-4 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Submit finance enquiry</button></div>
+      <div class="success hidden sm:col-span-2 p-5 rounded-xl bg-[#e8f6e9] border border-[#cfe7d2] text-[#225b2e] text-sm">
+        <strong class="block">Preview submitted.</strong>
+        <span class="block mt-1">This front-end preview does not send your details to iSCOOP or a finance provider. Once connected to iSCOOP’s enquiry system, this step should confirm receipt and explain the next step. Submission is not an approval or credit decision.</span>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-14 sm:pb-20">
+  <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 shadow-framer">
+    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Eligibility & documentation</span>
+    <h2 class="text-2xl sm:text-3xl font-extrabold mt-2">Prepare for a provider assessment.</h2>
+    <p class="text-muted font-body leading-relaxed mt-3 max-w-4xl">A finance provider may ask for identity and contact information, evidence of income or business turnover, and details of the selected system or quotation. Requirements vary by provider and applicant; the provider will confirm the exact documents and assessment steps.</p>
+    <p class="text-sm text-muted mt-3">Submit documents only through the channel specified by the finance provider. iSCOOP does not publish or guarantee lender criteria.</p>
+  </div>
+</section>
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20">
+  <div class="rounded-3xl bg-[#e8f4e9] border border-brand-500/15 p-6 sm:p-10 reveal">
+    <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Finance disclaimer</span>
+    <p class="text-ink/75 font-body leading-relaxed mt-3 max-w-4xl">Finance is subject to eligibility, credit assessment and partner approval. The calculator illustrates a minimum 30% deposit, 4% flat monthly interest and a 3% administration fee on the financed amount. Providers confirm final terms in writing, and iSCOOP does not guarantee credit approval.</p>
+    <a href="#finance-application" class="inline-flex mt-7 px-6 py-3.5 rounded-2xl bg-brand-500 text-white font-bold hover:bg-brand-600">Start a finance enquiry →</a>
+  </div>
+</section>
+<style>.step{display:flex;gap:1rem;align-items:flex-start;padding:1rem;border:1px solid rgba(6,19,29,.08);border-radius:1rem;background:#f5f7f2}.step b{width:2rem;height:2rem;display:flex;align-items:center;justify-content:center;border-radius:.7rem;background:rgba(22,133,59,.1);color:#16853b;font-size:.8rem;flex:none}.step strong{font-size:.92rem}.step p{font:400 .8rem/1.55 "DM Sans",sans-serif;color:#5e6b73;margin-top:.25rem}.step-number{display:flex;align-items:center;justify-content:center;width:1.75rem;height:1.75rem;flex:none;border-radius:.65rem;background:#b8d83e;color:#06131d;font-size:.8rem}.label{display:block;font-size:.875rem;font-weight:700;color:#16252c;margin-bottom:.4rem}.field{width:100%;padding:.8rem 1rem;border-radius:.8rem;background:#fff;border:1px solid rgba(6,19,29,.15);color:#16252c;outline:0}.field:focus{border-color:#16853b;box-shadow:0 0 0 3px rgba(22,133,59,.12)}.field::placeholder{color:#8b969b}</style>
+<script>
+(()=>{
+  const pkg=document.getElementById('estimate-package');
+  const period=document.getElementById('estimate-period');
+  const contribution=document.getElementById('estimate-contribution');
+  const priceOut=document.getElementById('estimate-price');
+  const upfrontOut=document.getElementById('estimate-upfront');
+  const financeOut=document.getElementById('estimate-finance');
+  const interestOut=document.getElementById('estimate-interest');
+  const feeOut=document.getElementById('estimate-fee');
+  const monthlyOut=document.getElementById('estimate-monthly');
+  const note=document.getElementById('estimate-note');
+  const apply=document.getElementById('estimate-apply');
+  const formPackage=document.getElementById('finance-package');
+  if(!pkg||!period||!contribution) return;
+  const naira=new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0});
+  const update=()=>{
+    const total=Number(pkg.value);
+    const months=Number(period.value);
+    const percent=Number(contribution.value);
+    const upfront=Math.round(total*percent/100);
+    const financed=total-upfront;
+    const interest=Math.round(financed*0.04*months);
+    const adminFee=Math.round(financed*0.03);
+    const monthly=Math.ceil((financed+interest+adminFee)/months);
+    priceOut.textContent=total?naira.format(total):'Assessment required';
+    upfrontOut.textContent=total?naira.format(upfront):'To be assessed';
+    financeOut.textContent=total?naira.format(financed):'To be assessed';
+    interestOut.textContent=total?naira.format(interest):'To be assessed';
+    feeOut.textContent=total?naira.format(adminFee):'To be assessed';
+    monthlyOut.textContent=total?naira.format(monthly)+' / month':'Custom quote';
+    note.textContent=total?'Illustration uses 4% flat interest per month on the financed amount and a one-time admin fee of 3% of that amount. Final terms are subject to provider assessment and written confirmation.':'Commercial and custom systems require a site and load assessment. Final scope and any finance terms are confirmed separately.';
+    if(formPackage&&total){
+      const selected=pkg.options[pkg.selectedIndex].text.split(' — ')[0];
+      Array.from(formPackage.options).forEach(option=>{if(option.text===selected) formPackage.value=option.value;});
+    }
+  };
+  [pkg,period,contribution].forEach(control=>control.addEventListener('change',update));
+  apply?.addEventListener('click',()=>{
+    if(formPackage&&!Number(pkg.value)) formPackage.value='Request custom sizing';
+  });
+  update();
+})();
+</script>
+</main>
+<footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8 mt-10">
+  <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8 sm:gap-10 mb-10 sm:mb-12">
+    <div class="space-y-4 col-span-2 md:col-span-2">
+      <a href="index.html" class="inline-block"><img src="assets/iscoop-logo.png" alt="iSCOOP" class="w-[110px] sm:w-[125px] h-auto" style="filter:brightness(0) invert(1);opacity:.95"></a>
+      <p class="text-sm text-slate-400 max-w-sm">Reliable renewable-energy solutions for homes, businesses and institutions.</p>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Solutions</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="homes.html" class="hover:text-white">Homes</a></li>
+        <li><a href="business.html" class="hover:text-white">Business & SME</a></li>
+        <li><a href="commercial.html" class="hover:text-white">Commercial & Institutions</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Platform</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="packages.html" class="hover:text-white">Packages</a></li>
+        <li><a href="finance.html" class="hover:text-white">Flexible Finance</a></li>
+        <li><a href="epc-services.html" class="hover:text-white">EPC Services</a></li>
+        <li><a href="projects.html" class="hover:text-white">Projects</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Company</div>
+      <ul class="space-y-2.5 text-sm">
+        <li><a href="support.html" class="hover:text-white">Support</a></li>
+        <li><a href="faq.html" class="hover:text-white">FAQ</a></li>
+        <li><a href="about.html" class="hover:text-white">About</a></li>
+        
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-white/10 flex flex-col lg:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center lg:text-left">
+    <div>© <span data-year>2026</span> iSCOOP EPC- Renewable Energy Company. All rights reserved.</div>
+    <div>Financing is provided by third-party financial institutions and is subject to eligibility and approval.</div>
+  </div>
+</footer>
+<script src="script.js"></script>

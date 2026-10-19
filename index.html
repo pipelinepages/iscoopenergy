@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="assets/iscoop-logo.png">
+  <title>iSCOOP | Solar EPC & Renewable Energy Solutions</title>
+  <meta name="description" content="Renewable energy assessments, solar system design, installation and EPC delivery for homes, businesses and institutions in Nigeria.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Plus Jakarta Sans & DM Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <!-- Custom Framer Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef7ee',
+              100: '#d8ecd9',
+              200: '#b3d9b6',
+              300: '#27b957',
+              400: '#16853b',
+              500: '#16853b',
+              600: '#106d2f',
+              700: '#0d5a26',
+              800: '#0a4720',
+              900: '#07361a',
+              950: '#052e16',
+            },
+            lime: {
+              300: '#d3e878',
+              400: '#b8d83e',
+              500: '#9db82a',
+            },
+            ink: '#06131d',
+            cream: '#f5f7f2',
+            muted: '#5e6b73',
+          },
+          boxShadow: {
+            'framer': '0 20px 50px -10px rgba(6, 19, 29, 0.12), 0 0 0 1px rgba(6, 19, 29, 0.06) inset',
+            'framer-hover': '0 30px 70px -10px rgba(22, 133, 59, 0.20), 0 0 0 1px rgba(22, 133, 59, 0.25) inset',
+            'glass': '0 8px 32px 0 rgba(6, 19, 29, 0.08)',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-cream text-ink font-sans antialiased selection:bg-brand-400 selection:text-white overflow-x-hidden">
+
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-gradient-to-br from-brand-400/15 via-brand-300/10 to-transparent blur-[120px] animate-pulse"></div>
+    <div class="absolute top-[30%] -right-[15%] w-[55vw] h-[55vw] rounded-full bg-gradient-to-bl from-lime-400/15 via-brand-400/10 to-transparent blur-[140px]"></div>
+    <div class="absolute -bottom-[10%] left-[20%] w-[50vw] h-[50vw] rounded-full bg-gradient-to-tr from-brand-500/15 via-brand-300/10 to-transparent blur-[130px]"></div>
+  </div>
+
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-3 sm:py-4 px-3 sm:px-8">
+    <div class="max-w-7xl mx-auto flex items-center justify-between backdrop-blur-xl bg-white/80 border border-ink/10 rounded-2xl px-3 sm:px-5 py-2.5 sm:py-3.5 shadow-glass">
+      <a href="index.html" class="logo flex items-center" aria-label="iSCOOP home">
+        <img src="assets/iscoop-logo.png" alt="iSCOOP EPC - Renewable Energy Company" class="w-[96px] sm:w-[118px] h-auto">
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-1">
+        <a href="index.html" class="px-4 py-2 rounded-xl text-sm font-medium text-brand-500 bg-brand-500/10 transition-colors">Home</a>
+        <div class="relative group">
+          <button type="button" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors flex items-center gap-1.5">
+            Solutions 
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <!-- Dropdown: outer wrapper holds the hover bridge via inner pt-2 -->
+          <div class="absolute top-full left-0 w-64 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200">
+            <div class="pt-2">
+              <div class="p-2 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl">
+                <a href="homes.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Homes</div><div class="text-xs text-muted">Reliable power for modern residences</div></a>
+                <a href="business.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Business & SME</div><div class="text-xs text-muted">Uninterrupted operations for enterprises</div></a>
+                <a href="commercial.html" class="block p-3 rounded-xl hover:bg-cream transition-colors"><div class="font-semibold text-ink text-sm">Commercial EPC</div><div class="text-xs text-muted">Utility-scale & institutional energy</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="packages.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Packages</a>
+        <a href="finance.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">Flexible Finance</a>
+        <a href="epc-services.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">EPC Services</a>
+        <a href="about.html" class="px-4 py-2 rounded-xl text-sm font-medium text-ink/70 hover:text-ink hover:bg-ink/5 transition-colors">About</a>
+      </nav>
+
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="support.html" class="px-4 py-2.5 rounded-xl text-sm font-semibold text-ink/70 hover:text-ink hover:bg-ink/5 transition-all border border-ink/10">Support</a>
+        <a href="quote.html?type=home" class="relative group px-5 py-2.5 rounded-xl text-sm font-bold text-white bg-brand-500 shadow-lg shadow-brand-500/25 hover:bg-brand-600 hover:shadow-brand-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all overflow-hidden">
+          <span class="relative z-10 flex items-center gap-2">Get Solar Plan <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg></span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden p-2.5 rounded-xl bg-white border border-ink/10 text-ink/80 hover:text-ink hover:bg-cream active:scale-95 transition-all focus:outline-none focus:ring-2 focus:ring-brand-500/40" aria-label="Toggle menu">
+        <svg class="w-6 h-6 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden max-w-7xl mx-auto mt-2 p-3 sm:p-4 bg-white backdrop-blur-2xl border border-ink/10 rounded-2xl shadow-2xl space-y-1 sm:space-y-2 max-h-[calc(100vh-120px)] overflow-y-auto">
+      <a href="index.html" class="block px-4 py-3 rounded-xl font-medium text-brand-500 bg-brand-500/10">Home</a>
+      <a href="homes.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Homes & Residential</a>
+      <a href="business.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Business & SME</a>
+      <a href="commercial.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Commercial EPC</a>
+      <a href="packages.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Packages</a>
+      <a href="finance.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Flexible Finance</a>
+      <a href="support.html" class="block px-4 py-3 rounded-xl font-medium text-ink/70 hover:bg-cream">Support</a>
+      <div class="pt-2 border-t border-ink/10 flex gap-2">
+      <a href="quote.html?type=home" class="flex-1 text-center py-3 rounded-xl font-bold text-white bg-brand-500 hover:bg-brand-600 transition-colors">Get Solar Plan</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10 pt-28 sm:pt-32 lg:pt-40">
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-12 lg:py-20">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center lg:items-start">
+        <div class="lg:col-span-7 space-y-6 sm:space-y-8 reveal">
+          <div class="inline-flex items-center gap-2.5 px-3 py-1.5 sm:px-3.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-[10px] sm:text-xs font-bold tracking-wider uppercase backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-brand-400 animate-ping"></span>
+            ENGINEERED RENEWABLE ENERGY PLATFORM
+          </div>
+          
+          <h1 class="text-[2rem] leading-[1.1] sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-ink sm:leading-[1.08]">
+            Reliable power, <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-brand-400">engineered around</span> your needs.
+          </h1>
+          
+          <p class="text-base sm:text-xl text-muted max-w-2xl font-body leading-relaxed">
+            iSCOOP assesses your energy use, designs the right system, and delivers installation and support—from essential home power to complete commercial EPC projects.
+          </p>
+
+          <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 pt-2">
+            <a href="quote.html" class="px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-white bg-brand-500 shadow-xl shadow-brand-500/25 hover:bg-brand-600 hover:shadow-brand-500/40 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-3 text-sm sm:text-base">
+              Get Your Solar Plan 
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+            <a href="packages.html" class="px-6 py-3.5 sm:px-8 sm:py-4 rounded-2xl font-bold text-ink bg-white hover:bg-cream border border-ink/10 hover:border-ink/20 transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+              Explore Packages
+            </a>
+          </div>
+
+          <!-- Quick Metrics Bar -->
+          <div class="grid grid-cols-3 gap-3 sm:gap-4 pt-6 sm:pt-8 border-t border-ink/10">
+            <div>
+              <div class="text-xl sm:text-3xl font-extrabold text-ink font-sans">10+</div>
+              <div class="text-[11px] sm:text-sm text-muted mt-1">Years Engineering</div>
+            </div>
+            <div>
+            <div class="text-xl sm:text-3xl font-extrabold text-ink font-sans">EPC</div>
+              <div class="text-[11px] sm:text-sm text-muted mt-1">End-to-end delivery</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-3xl font-extrabold text-ink font-sans">After-sales</div>
+              <div class="text-[11px] sm:text-sm text-muted mt-1">Technical support</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="lg:col-span-5 reveal">
+          <img src="assets/iscoophero.png" alt="Solar-powered home with live clean energy generation, battery storage, and carbon offset data" class="block w-full h-auto rounded-3xl border border-ink/10 shadow-framer lg:scale-110 lg:origin-top-right" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+    <section aria-label="iSCOOP service commitments" class="max-w-7xl mx-auto px-4 sm:px-8 pb-8 sm:pb-12">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 rounded-3xl bg-white border border-ink/10 p-5 sm:p-7 reveal">
+        <div class="p-2"><strong class="block text-brand-500">10+ years</strong><span class="text-sm text-muted">Solar engineering experience</span></div>
+        <div class="p-2"><strong class="block text-brand-500">EPC delivery</strong><span class="text-sm text-muted">Engineering through installation</span></div>
+        <div class="p-2"><strong class="block text-brand-500">Flexible finance</strong><span class="text-sm text-muted">Options for eligible customers</span></div>
+        <div class="p-2"><strong class="block text-brand-500">After-sales support</strong><span class="text-sm text-muted">Technical support and warranty coordination</span></div>
+      </div>
+    </section>
+    <section id="solutions" class="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-6 reveal">
+        <div>
+          <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Tailored Solutions</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mt-2 tracking-tight">Energy built for your scale.</h2>
+        </div>
+        <p class="text-muted max-w-md font-body">Choose the right starting point. We’ll help shape a solution around your loads, site and operating needs.</p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <!-- Card 1: Homes -->
+        <div id="homes" class="group relative rounded-3xl bg-white backdrop-blur-xl border border-ink/10 p-6 sm:p-8 hover:border-brand-500/50 hover:shadow-framer-hover transition-all duration-300 flex flex-col justify-between reveal">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center text-xl sm:text-2xl font-black mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              ⌂
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-3">Residential Solar</h3>
+            <p class="text-muted font-body text-sm leading-relaxed">
+              Uninterrupted comfort for modern homes. Power cooling, kitchen appliances, entertainment, and remote workstations with silent, reliable solar-plus-storage systems.
+            </p>
+          </div>
+          <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-ink/10 flex items-center justify-between gap-3">
+            <a href="quote.html?type=home" class="text-sm font-semibold text-brand-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">Get a Solar Plan <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-cream text-muted whitespace-nowrap">Popular</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Business & SME -->
+        <div id="business" class="group relative rounded-3xl bg-white backdrop-blur-xl border border-ink/10 p-6 sm:p-8 hover:border-brand-500/50 hover:shadow-framer-hover transition-all duration-300 flex flex-col justify-between reveal">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center text-xl sm:text-2xl font-black mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              ↗
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-3">Business & SME</h3>
+            <p class="text-muted font-body text-sm leading-relaxed">
+              Request an assessment of your operating loads, energy use and site requirements for a practical business solution.
+            </p>
+          </div>
+          <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-ink/10 flex items-center justify-between gap-3">
+            <a href="quote.html?type=business" class="text-sm font-semibold text-brand-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">Request a Business Energy Assessment <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-cream text-muted whitespace-nowrap">Assessment-led</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Commercial & Institutional -->
+        <div id="commercial" class="group relative rounded-3xl bg-white backdrop-blur-xl border border-ink/10 p-6 sm:p-8 hover:border-brand-500/50 hover:shadow-framer-hover transition-all duration-300 flex flex-col justify-between reveal">
+          <div>
+            <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-brand-500/10 border border-brand-500/20 text-brand-500 flex items-center justify-center text-xl sm:text-2xl font-black mb-5 sm:mb-6 group-hover:scale-110 transition-transform">
+              ▦
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-ink tracking-tight mb-3">Commercial EPC</h3>
+            <p class="text-muted font-body text-sm leading-relaxed">
+              Discuss an engineered renewable-energy project for your facility, institution or multi-load site.
+            </p>
+          </div>
+          <div class="pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-ink/10 flex items-center justify-between gap-3">
+            <a href="quote.html?type=commercial" class="text-sm font-semibold text-brand-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1.5">Discuss a Commercial EPC Project <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></a>
+            <span class="text-xs px-2.5 py-1 rounded-full bg-cream text-muted whitespace-nowrap">Enterprise</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div class="rounded-3xl bg-ink text-white p-6 sm:p-10 reveal">
+        <span class="text-lime-400 font-bold text-xs uppercase tracking-widest">How iSCOOP works</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold mt-2">A clear path from assessment to support.</h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-5 mt-8">
+          <div><b class="text-lime-400">01 · Assess</b><p class="text-sm text-slate-300 mt-2">Understand your energy use, site and priorities.</p></div>
+          <div><b class="text-lime-400">02 · Design</b><p class="text-sm text-slate-300 mt-2">Develop a configuration for operating requirements.</p></div>
+          <div><b class="text-lime-400">03 · Finance</b><p class="text-sm text-slate-300 mt-2">Explore options where available and eligible.</p></div>
+          <div><b class="text-lime-400">04 · Install</b><p class="text-sm text-slate-300 mt-2">Deliver installation to the agreed scope.</p></div>
+          <div><b class="text-lime-400">05 · Support</b><p class="text-sm text-slate-300 mt-2">Access technical support and warranty coordination.</p></div>
+        </div>
+        <a href="quote.html?type=business" class="inline-flex mt-8 px-6 py-3 rounded-xl bg-lime-400 text-ink font-bold">Start an assessment →</a>
+      </div>
+    </section>
+
+    <section class="hidden max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-16">
+      <div class="relative rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] border border-ink/10 p-6 sm:p-10 lg:p-14 overflow-hidden reveal shadow-2xl">
+        <div class="absolute -right-20 -bottom-20 w-96 h-96 bg-lime-400/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="grid lg:grid-cols-12 gap-8 items-center relative z-10">
+          <div class="lg:col-span-7 space-y-5 sm:space-y-6">
+            <span class="px-3 py-1.5 sm:px-3.5 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-[10px] sm:text-xs font-bold uppercase tracking-widest">FLEXIBLE FINANCE</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight">World-class solar made accessible.</h2>
+            <p class="text-slate-400 font-body text-base sm:text-lg leading-relaxed">
+              Eligible customers may be able to finance an approved system through third-party financial institutions. Rates, fees, contribution, tenor and approval depend on the applicant and provider.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-2">
+              <a href="finance.html" class="px-6 py-3 sm:px-7 sm:py-3.5 rounded-2xl font-bold text-white bg-brand-500 hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20 text-sm sm:text-base">Check finance options</a>
+            </div>
+          </div>
+          <div class="lg:col-span-5 grid gap-3">
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-lime-400/20 text-lime-400 flex items-center justify-center font-bold flex-shrink-0">1</div>
+              <div><div class="font-bold text-white text-sm">Select System Specs</div><div class="text-xs text-slate-400">Choose your package or request custom sizing</div></div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-lime-400/20 text-lime-400 flex items-center justify-center font-bold flex-shrink-0">2</div>
+              <div><div class="font-bold text-white text-sm">Submit Finance Interest</div><div class="text-xs text-slate-400">Quick eligibility check with our partners</div></div>
+            </div>
+            <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-4">
+              <div class="w-10 h-10 rounded-xl bg-lime-400/20 text-lime-400 flex items-center justify-center font-bold flex-shrink-0">3</div>
+              <div><div class="font-bold text-white text-sm">Seamless Deployment</div><div class="text-xs text-slate-400">Professional installation & activation</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="packages" class="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+      <!-- Section header -->
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 sm:mb-16 reveal">
+        <div class="text-center md:text-left max-w-2xl mx-auto md:mx-0">
+          <span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Transparent Pricing</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-ink mt-2 tracking-tight">Curated Solar Packages</h2>
+          <p class="text-muted mt-4 font-body text-sm sm:text-base">Indicative configurations from entry to business scale. Start with a package, then confirm fit through a load and site assessment.</p>
+        </div>
+
+      </div>
+
+      <div class="reveal">
+        <div data-home-packages class="grid sm:grid-cols-2 md:grid-cols-3 gap-5" aria-live="polite">
+          <p class="text-sm text-muted">Loading approved package details…</p>
+        </div>
+      </div>
+
+      <!-- Swipe hint + full comparison link -->
+      <div class="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-3 mt-6 sm:mt-8">
+        <p class="text-xs text-muted font-body">Three examples are shown here. See the full schedule for all packages. System fit depends on a load and site assessment.</p>
+        <a href="packages.html" class="text-sm font-semibold text-brand-500 hover:text-brand-600 transition-colors inline-flex items-center gap-1.5">
+          Compare full package details
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </section>
+    <section id="finance" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div class="rounded-3xl bg-gradient-to-br from-ink via-[#081813] to-[#0c2419] p-7 sm:p-10 text-white grid lg:grid-cols-12 gap-8 items-center reveal">
+        <div class="lg:col-span-8"><span class="text-lime-400 font-bold text-xs uppercase tracking-widest">Flexible finance</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Explore ways to spread the cost.</h2><p class="text-slate-300 font-body mt-4 leading-relaxed">Eligible customers may be able to finance an approved system through third-party financial institutions. Rates, fees, contribution, tenor and approval depend on the applicant and provider.</p></div>
+        <div class="lg:col-span-4"><a href="finance.html" class="block text-center px-6 py-4 rounded-xl bg-lime-400 text-ink font-bold hover:bg-lime-300">Check finance options →</a></div>
+      </div>
+    </section>
+    <section id="epc-capability" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div class="grid lg:grid-cols-12 gap-8 items-center">
+        <div class="lg:col-span-5 reveal"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">EPC capability</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">From energy audit to commissioning and support.</h2><p class="text-muted font-body mt-4 leading-relaxed">iSCOOP can support the full project path, with scope shaped to your facility and energy requirements.</p><a href="quote.html?type=commercial" class="inline-flex mt-6 px-6 py-3 rounded-xl bg-brand-500 text-white font-bold">Discuss a commercial EPC project →</a></div>
+        <div class="lg:col-span-7 grid sm:grid-cols-2 gap-3 reveal">
+          <div class="p-5 rounded-2xl bg-white border border-ink/10"><b>Energy audit</b><p class="text-sm text-muted mt-2">Understand usage, demand and priorities.</p></div>
+          <div class="p-5 rounded-2xl bg-white border border-ink/10"><b>Engineering & design</b><p class="text-sm text-muted mt-2">Develop a system configuration for the site.</p></div>
+          <div class="p-5 rounded-2xl bg-white border border-ink/10"><b>Procurement</b><p class="text-sm text-muted mt-2">Coordinate equipment to the agreed scope.</p></div>
+          <div class="p-5 rounded-2xl bg-white border border-ink/10"><b>Installation & commissioning</b><p class="text-sm text-muted mt-2">Install and verify system operation.</p></div>
+          <div class="sm:col-span-2 p-5 rounded-2xl bg-white border border-ink/10"><b>Operations & maintenance</b><p class="text-sm text-muted mt-2">Plan ongoing support and maintenance requirements.</p></div>
+        </div>
+      </div>
+    </section>
+    <section id="why-iscoop" class="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16">
+      <div class="text-center max-w-3xl mx-auto reveal"><span class="text-brand-500 font-bold text-xs uppercase tracking-widest">Why iSCOOP</span><h2 class="text-3xl sm:text-4xl font-extrabold mt-2">Technical decisions, clearly explained.</h2><p class="text-muted font-body mt-4">Recommendations should follow your loads and site conditions. We make the proposed scope and next steps clear.</p></div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-8">
+        <div class="p-5 bg-white rounded-2xl border border-ink/10"><b>Assessment-led</b><p class="text-sm text-muted mt-2">Understand the actual load before sizing.</p></div>
+        <div class="p-5 bg-white rounded-2xl border border-ink/10"><b>Clear scope</b><p class="text-sm text-muted mt-2">See the configuration and delivery steps.</p></div>
+        <div class="p-5 bg-white rounded-2xl border border-ink/10"><b>Complete EPC</b><p class="text-sm text-muted mt-2">Engineering, procurement, installation and commissioning.</p></div>
+        <div class="p-5 bg-white rounded-2xl border border-ink/10"><b>Support after delivery</b><p class="text-sm text-muted mt-2">Technical support and warranty coordination.</p></div>
+      </div><a href="about.html" class="block text-center text-brand-500 font-bold mt-6">About iSCOOP →</a>
+    </section>
+    <section id="quote" class="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20">
+      <div class="rounded-3xl bg-white border border-ink/10 p-6 sm:p-10 lg:p-14 shadow-2xl reveal">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12">
+          <div class="lg:col-span-5 space-y-5 sm:space-y-6">
+            <span class="px-3 py-1.5 sm:px-3.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-500 text-[10px] sm:text-xs font-bold uppercase tracking-widest">START YOUR JOURNEY</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-ink tracking-tight">Start with the right assessment.</h2>
+            <p class="text-muted font-body leading-relaxed">
+              Build a load estimate from your appliances and backup target. Get an indicative package recommendation and a report you can share or print.
+            </p>
+            <div class="space-y-4 pt-4">
+              <div class="flex items-center gap-3 text-ink/80 text-sm"><span class="w-8 h-8 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-bold flex-shrink-0">✓</span> Appliance-by-appliance load estimate</div>
+              <div class="flex items-center gap-3 text-ink/80 text-sm"><span class="w-8 h-8 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-bold flex-shrink-0">✓</span> Package sized for your backup target</div>
+              <div class="flex items-center gap-3 text-ink/80 text-sm"><span class="w-8 h-8 rounded-xl bg-brand-500/10 text-brand-500 flex items-center justify-center font-bold flex-shrink-0">✓</span> Shareable and printable audit summary</div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-7">
+            <form data-load-audit class="space-y-5 bg-cream p-5 sm:p-6 md:p-8 rounded-2xl border border-ink/10">
+              <div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-bold uppercase tracking-wider text-ink/80 mb-1.5">Name (optional)</label><input data-audit-name type="text" placeholder="Your name" class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"></div><div><label class="block text-xs font-bold uppercase tracking-wider text-ink/80 mb-1.5">Location (optional)</label><input data-audit-location type="text" placeholder="City / area" class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"></div></div>
+              <div class="grid sm:grid-cols-2 gap-4"><div><label class="block text-xs font-bold uppercase tracking-wider text-ink/80 mb-1.5">Site type</label><select data-site-type class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"><option value="home">Home</option><option value="business">Business / SME</option><option value="commercial">Commercial / institution</option></select></div><div><label class="block text-xs font-bold uppercase tracking-wider text-ink/80 mb-1.5">Desired backup time (hours)</label><input data-backup-hours type="number" min="1" max="72" value="8" required class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"></div></div>
+              <div><div class="flex items-center justify-between gap-3 mb-2"><div><label class="block text-xs font-bold uppercase tracking-wider text-ink/80">Appliances and loads</label><p class="text-xs text-muted mt-1">Use nameplate watts where possible. Mark essential loads for backup sizing.</p></div><button data-add-load type="button" class="px-3 py-2 rounded-lg bg-white border border-ink/10 text-sm font-bold text-brand-500">+ Add load</button></div><div data-load-rows class="space-y-2"></div></div>
+              <details class="text-sm"><summary class="cursor-pointer font-semibold">Optional contact details</summary><div class="grid sm:grid-cols-2 gap-4 mt-3"><input data-audit-phone type="tel" placeholder="Phone number" class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"><input data-audit-email type="email" placeholder="Email address" class="w-full px-4 py-3 rounded-xl bg-white border border-ink/10"></div></details>
+              <button type="submit" class="w-full py-4 rounded-xl font-bold text-white bg-brand-500 hover:bg-brand-600 transition-all">Check My Load</button>
+              <p data-audit-status class="text-sm text-muted" aria-live="polite">Your information stays in this browser. Generate a report, then share or print it.</p>
+            </form>
+            <section data-audit-report class="hidden mt-8 border-t border-ink/10 pt-8" aria-live="polite"></section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div data-package-modal class="hidden fixed inset-0 z-[100] overflow-y-auto" aria-hidden="true">
+      <button type="button" data-modal-close class="fixed inset-0 w-full h-full bg-ink/75 backdrop-blur-sm cursor-default" aria-label="Close package details"></button>
+      <div class="min-h-full flex items-center justify-center p-4 sm:p-6">
+        <section role="dialog" aria-modal="true" aria-labelledby="package-modal-title" tabindex="-1" class="relative w-full max-w-2xl rounded-3xl bg-white border border-ink/10 shadow-framer p-6 sm:p-8 outline-none">
+          <button type="button" data-modal-close class="absolute top-4 right-4 w-10 h-10 rounded-full bg-cream text-ink font-bold text-xl" aria-label="Close package details">×</button>
+          <span class="inline-flex px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-xs font-bold uppercase tracking-wider">Package details</span>
+          <h2 id="package-modal-title" data-modal-title class="text-2xl sm:text-3xl font-extrabold text-ink mt-4 pr-10"></h2>
+          <p data-modal-price class="text-2xl font-extrabold text-brand-500 mt-2"></p>
+          <dl class="grid sm:grid-cols-3 gap-4 mt-6">
+            <div class="rounded-2xl bg-cream p-4"><dt class="text-xs font-bold uppercase tracking-wider text-muted">Inverter / power unit</dt><dd data-modal-power class="text-sm font-semibold text-ink mt-2"></dd></div>
+            <div class="rounded-2xl bg-cream p-4"><dt class="text-xs font-bold uppercase tracking-wider text-muted">Battery</dt><dd data-modal-battery class="text-sm font-semibold text-ink mt-2"></dd></div>
+            <div class="rounded-2xl bg-cream p-4"><dt class="text-xs font-bold uppercase tracking-wider text-muted">Solar panels</dt><dd data-modal-panels class="text-sm font-semibold text-ink mt-2"></dd></div>
+          </dl>
+          <div class="mt-6"><h3 class="font-bold text-ink">Typical appliances / loads · indicative</h3><div data-modal-appliance-chips class="flex flex-wrap gap-2 mt-3"></div><p data-modal-loads class="text-sm text-ink/75 leading-relaxed mt-3"></p></div>
+          <div data-modal-included-row class="mt-4" hidden><h3 class="font-bold text-ink">Also included</h3><p data-modal-included class="text-sm text-ink/75 leading-relaxed mt-1"></p></div>
+          <div class="mt-4 rounded-2xl bg-[#e8f4e9] border border-brand-500/15 p-4"><h3 class="font-bold text-ink">Important note</h3><p data-modal-note class="text-sm text-ink/75 leading-relaxed mt-1"></p></div>
+          <div class="grid sm:grid-cols-2 gap-3 mt-6"><a data-modal-check href="quote.html" class="px-4 py-3 rounded-xl bg-brand-500 text-white text-sm font-bold text-center hover:bg-brand-600">Check My Load</a><a data-modal-quote href="quote.html" class="px-4 py-3 rounded-xl bg-cream text-ink text-sm font-bold text-center hover:bg-ink/10">Buy Now</a></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="relative z-10 border-t border-ink/10 bg-ink text-slate-400 py-12 sm:py-16 px-4 sm:px-8">
+    <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 mb-10 sm:mb-12">
+      <div class="space-y-4 col-span-2 md:col-span-1">
+        <a href="index.html" class="footer-logo inline-block" aria-label="iSCOOP home">
+          <img src="assets/iscoop-logo.png" alt="iSCOOP" class="w-[110px] sm:w-[125px] h-auto" style="filter: brightness(0) invert(1); opacity:.95;">
+        </a>
+        <p class="text-sm text-slate-400 max-w-sm">World-class renewable energy EPC services, smart solar systems, and flexible financing across Nigeria.</p>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Solutions</div>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="homes.html" class="hover:text-white transition-colors">Residential Homes</a></li>
+          <li><a href="business.html" class="hover:text-white transition-colors">Business & SME</a></li>
+          <li><a href="commercial.html" class="hover:text-white transition-colors">Commercial EPC</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Platform</div>
+        <ul class="space-y-2.5 text-sm">
+          <li><a href="packages.html" class="hover:text-white transition-colors">Curated Packages</a></li>
+          <li><a href="finance.html" class="hover:text-white transition-colors">Flexible Finance</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="quote.html#load-assessment" class="hover:text-white transition-colors">Check My Load</a></li>
+        </ul>
+      </div>
+      <div class="col-span-2 md:col-span-1">
+        <div class="font-bold text-white text-sm uppercase tracking-wider mb-4">Support & Contact</div>
+        <ul class="space-y-2.5 text-sm">
+          
+          <li><span class="text-slate-400">Lagos, Nigeria</span></li>
+          <li><a href="mailto:support@iscoop.ng" class="hover:text-white transition-colors break-all">support@iscoop.ng</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3 sm:gap-4 text-center sm:text-left">
+      <div>© <span data-year>2026</span> iSCOOP EPC - Renewable Energy Company. All rights reserved.</div>
+      <div>Financing provided by verified third-party financial partners subject to approval.</div>
+    </div>
+  </footer>
+  <script id="home-package-data" type="application/json">[["Portable 500","500W / 1000Wh all-in-one portable solar system + 500W+ solar panel","₦490,000","4–6 LED lights, 1 standing fan, LED TV, Wi‑Fi router, phones and a laptop.","Best for essential electronics and light household use. Avoid refrigerators, pumps, irons, kettles and other high-surge/heating loads."],["Portable 1K","1kW / 1kWh all-in-one portable solar system + 500W+ solar panel","₦590,000","6–8 LED lights, 1–2 fans, LED TV, Wi‑Fi, phones, laptop and other low-power electronics; a small efficient fridge may be used selectively when solar is available.","Battery storage is still 1kWh, so prioritize essential loads and avoid prolonged refrigeration or heating appliances."],["Essential 1.5","1.5kVA hybrid inverter + 1.2kWh lithium battery + 1 × 500W+ solar panel + accessories and installation","₦905,000","6–8 LED lights, 1–2 fans, TV/decoder, Wi‑Fi, phones, laptop and a small efficient refrigerator on managed use.","Designed for essential home loads. Not intended for air-conditioners, electric cookers, water heaters or large pumps."],["Essential Plus","1.5kVA hybrid inverter + 2.5kWh lithium battery + 1 × 500W+ solar panel + accessories and installation","₦1,155,000","8–10 LED lights, 2 fans, TV/decoder, Wi‑Fi, phones, 1–2 laptops and a refrigerator.","More battery reserve for evening essentials. High-power appliances should remain off unless assessed."],["Comfort 2.5","2.5kW hybrid inverter + 2.5kWh lithium battery + 2 × 500W+ solar panels + accessories and installation","₦1,560,000","10–12 LED lights, 2–3 fans, TV, refrigerator, Wi‑Fi, laptops, CCTV/POS and occasional use of a blender or non-heating washing machine.","A small water pump may be possible intermittently after surge/load validation. Air-conditioning is not the primary use case for this battery size."],["Comfort 5","3kW hybrid inverter + 5kWh lithium battery + 3 × 500W+ solar panels + accessories and installation","₦2,485,000","12–15 LED lights, 3–4 fans, TV, refrigerator, small freezer, Wi‑Fi, laptops/POS/CCTV, washing machine and a small water pump on managed use.","May support one efficient small inverter AC for limited periods after a load assessment; do not combine with other heavy loads without validation."],["Scale 5","6kW hybrid inverter + 5kWh lithium battery + 5 × 500W+ solar panels + accessories and installation","₦3,250,000","15–20 LED lights, multiple fans, 1–2 TVs, refrigerator, freezer, Wi‑Fi, laptops/POS/CCTV, washing machine, small pump and one efficient inverter AC for managed/limited use.","Strong inverter capacity with modest battery storage; ideal for daytime productivity and managed evening loads."],["Scale 10","6kW hybrid inverter + 10kWh lithium battery + 6 × 500W+ solar panels + accessories and installation","₦4,560,000","Whole-home essentials, refrigerator and freezer, multiple TVs/fans, office devices, washing machine, small pump, plus one 1–1.5HP efficient inverter AC on managed loading, subject to load assessment.","Two smaller inverter ACs may be possible for shorter managed periods after a load audit."],["Scale 15","6kW hybrid inverter + 15kWh lithium battery + 10 × 500W+ solar panels + accessories and installation","₦5,500,000","Whole-home essentials, refrigeration, TVs, fans, IT/CCTV/POS, washing machine, pump and 1–2 efficient inverter ACs under managed use.","Suitable where longer evening/overnight battery support is important."],["Business 30","10kW hybrid inverter + 30kWh lithium battery + 18 × 500W+ solar panels + accessories and installation","₦11,090,000","Typical small clinic, office, retail store or hospitality load: lighting, computers, POS/CCTV/networking, refrigerators/freezers, pumps and approximately 2–4 efficient inverter ACs depending on concurrent demand.","Commercial loads require a site survey and load schedule."],["Business 45","12.5kW hybrid inverter + 45kWh lithium battery + 24 × 500W+ solar panels + accessories and installation","₦15,770,000","Typical medium office, clinic, school, retail or hospitality load: extensive lighting/IT, refrigeration, pumps, CCTV/networking and approximately 3–5 efficient inverter ACs depending on simultaneous demand.","Final system suitability must follow an energy audit."]]</script>
+  <script src="script.js"></script>
+</body>
+</html>

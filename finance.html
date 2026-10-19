@@ -222,6 +222,14 @@
   const apply=document.getElementById('estimate-apply');
   const formPackage=document.getElementById('finance-package');
   if(!pkg||!period||!contribution) return;
+  const requestedPackage=new URLSearchParams(window.location.search).get('package');
+  if(requestedPackage){
+    const target=requestedPackage==='Custom / commercial'?'Request custom sizing':requestedPackage;
+    const matchingOption=Array.from(formPackage?.options||[]).find(option=>option.text===target||option.text.startsWith(target+' — '));
+    if(matchingOption&&formPackage) formPackage.value=matchingOption.value;
+    const estimateOption=Array.from(pkg.options).find(option=>option.text.split(' — ')[0]===requestedPackage);
+    if(estimateOption) pkg.value=estimateOption.value;
+  }
   const naira=new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0});
   const update=()=>{
     const total=Number(pkg.value);

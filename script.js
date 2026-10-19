@@ -32,6 +32,115 @@
 
   document.querySelectorAll('[data-year]').forEach(el=>el.textContent=new Date().getFullYear());
 
+  // Offer the homepage load calculator in a dismissible popup after the visitor has settled in.
+  const pageName=window.location.pathname.split('/').pop();
+  const homeAuditForm=document.querySelector('#quote [data-load-audit]');
+  if((!pageName||pageName==='index.html')&&homeAuditForm){
+    const popup=document.createElement('div');
+    popup.className='hidden fixed inset-0 z-[120] overflow-y-auto p-3 sm:p-6';
+    popup.setAttribute('data-load-popup','');
+    popup.setAttribute('aria-hidden','true');
+    popup.innerHTML='<button type="button" data-popup-backdrop class="fixed inset-0 w-full h-full bg-ink/75 backdrop-blur-sm" aria-label="Close load calculator"></button><div class="relative min-h-full flex items-center justify-center"><section data-audit-scope class="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white p-5 sm:p-8 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="load-popup-title"><div class="flex items-start justify-between gap-4 mb-5"><div><p class="text-xs font-bold uppercase tracking-widest text-brand-500">Free load check</p><h2 id="load-popup-title" class="text-2xl sm:text-3xl font-extrabold mt-1">Find a package for your loads</h2><p class="text-sm text-muted mt-2">Add your appliances and backup target to create a shareable audit report.</p></div><button type="button" data-popup-close class="shrink-0 w-10 h-10 rounded-full bg-cream text-ink text-2xl leading-none" aria-label="Close load calculator">×</button></div></section></div>';
+    const dialog=popup.querySelector('[data-audit-scope]');
+    const popupForm=homeAuditForm.cloneNode(true);
+    popupForm.querySelector('[data-audit-status]')?.replaceChildren(document.createTextNode('Add your loads to generate a recommendation and audit report.'));
+    popupForm.classList.remove('p-5','sm:p-6','md:p-8');
+    popupForm.classList.add('p-0','border-0','bg-transparent');
+    const popupReport=document.createElement('section');
+    popupReport.className='hidden mt-8 border-t border-ink/10 pt-8';
+    popupReport.setAttribute('data-audit-report','');
+    popupReport.setAttribute('aria-live','polite');
+    dialog.append(popupForm,popupReport);
+    document.body.appendChild(popup);
+    const background=Array.from(document.body.children).filter(element=>element!==popup);
+    const inertStates=new Map(background.map(element=>[element,element.inert]));
+    let popupOpener=null;
+    const closePopup=()=>{
+      popup.classList.add('hidden');
+      popup.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      background.forEach(element=>element.inert=inertStates.get(element));
+      popupOpener?.focus({preventScroll:true});
+    };
+    popup.querySelectorAll('[data-popup-close],[data-popup-backdrop]').forEach(button=>button.addEventListener('click',closePopup));
+    document.addEventListener('keydown',event=>{
+      if(popup.classList.contains('hidden'))return;
+      if(event.key==='Escape'){closePopup();return}
+      if(event.key==='Tab'){
+        const focusable=[...popup.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')].filter(element=>element.offsetParent!==null);
+        const first=focusable[0],last=focusable[focusable.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}
+      }
+    });
+    window.setTimeout(()=>{
+      if(!popup.isConnected)return;
+      const packageSection=document.querySelector('#packages')?.getBoundingClientRect();
+      if(packageSection&&packageSection.top<window.innerHeight&&packageSection.bottom>0)return;
+      popup.classList.remove('hidden');
+      popup.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      popupOpener=document.activeElement;
+      background.forEach(element=>element.inert=true);
+      popupForm.querySelector('[data-audit-name]')?.focus({preventScroll:true});
+    },5000);
+  }
+
+  // Show the finance estimate when the homepage package catalogue comes into view.
+  const homePackagesSection=document.querySelector('#packages');
+  if((!pageName||pageName==='index.html')&&homePackagesSection){
+    const financePackages=[['Portable 500',490000],['Portable 1K',590000],['Essential 1.5',905000],['Essential Plus',1155000],['Comfort 2.5',1560000],['Comfort 5',2485000],['Scale 5',3250000],['Scale 10',4560000],['Scale 15',5500000],['Business 30',11090000],['Business 45',15770000],['Custom / commercial',0]];
+    const financePopup=document.createElement('div');
+    financePopup.className='hidden fixed inset-0 z-[130] overflow-y-auto p-3 sm:p-6';
+    financePopup.setAttribute('aria-hidden','true');
+    financePopup.innerHTML='<button type="button" data-finance-backdrop class="fixed inset-0 w-full h-full bg-ink/75 backdrop-blur-sm" aria-label="Close finance calculator"></button><div class="relative min-h-full flex items-center justify-center"><section data-finance-dialog class="relative w-full max-w-3xl max-h-[92vh] overflow-y-auto rounded-3xl bg-white p-5 sm:p-8 shadow-2xl" role="dialog" aria-modal="true" aria-labelledby="home-finance-title"><div class="flex items-start justify-between gap-4 mb-5"><div><p class="text-xs font-bold uppercase tracking-widest text-brand-500">Illustrative finance calculator</p><h2 id="home-finance-title" class="text-2xl sm:text-3xl font-extrabold mt-1">Explore a package estimate</h2><p class="text-sm text-muted mt-2">Estimate based on the selected package, deposit and repayment period.</p></div><button type="button" data-finance-close class="shrink-0 w-10 h-10 rounded-full bg-cream text-ink text-2xl leading-none" aria-label="Close finance calculator">×</button></div><div class="rounded-2xl bg-cream p-4 sm:p-6"><div class="grid sm:grid-cols-2 gap-4"><label class="block text-sm font-bold">iSCOOP package<select data-finance-package class="field mt-1.5 w-full px-4 py-3 rounded-xl bg-white border border-ink/10">'+financePackages.map(([name,price])=>`<option value="${price}" ${name==='Comfort 5'?'selected':''}>${name}${price?' — ₦'+price.toLocaleString('en-NG'):' — assessment required'}</option>`).join('')+'</select></label><label class="block text-sm font-bold">Example repayment period<select data-finance-period class="field mt-1.5 w-full px-4 py-3 rounded-xl bg-white border border-ink/10"><option value="6">6 months</option><option value="12" selected>12 months</option><option value="18">18 months</option><option value="24">24 months</option><option value="36">36 months</option></select></label><label class="block text-sm font-bold">Deposit<select data-finance-contribution class="field mt-1.5 w-full px-4 py-3 rounded-xl bg-white border border-ink/10"><option value="30" selected>30% (minimum)</option><option value="40">40%</option><option value="50">50%</option><option value="60">60%</option></select><span class="block text-xs text-muted font-normal mt-1">Minimum deposit is 30%.</span></label></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5 rounded-2xl bg-[#e8f4e9] border border-brand-500/15 p-4"><div><span class="text-xs text-muted block">Package price</span><strong data-finance-price class="text-lg"></strong></div><div><span class="text-xs text-muted block">Deposit</span><strong data-finance-upfront class="text-lg"></strong></div><div><span class="text-xs text-muted block">Amount financed</span><strong data-finance-principal class="text-lg"></strong></div><div><span class="text-xs text-muted block">Flat interest (4% monthly)</span><strong data-finance-interest class="text-lg"></strong></div><div><span class="text-xs text-muted block">Admin fee (3%)</span><strong data-finance-fee class="text-lg"></strong></div><div><span class="text-xs text-muted block">Estimated monthly instalment</span><strong data-finance-monthly class="text-lg text-brand-600"></strong></div></div><p data-finance-note aria-live="polite" class="text-xs text-muted mt-4"></p><a data-finance-continue href="finance.html#finance-application" class="inline-flex mt-5 px-5 py-3 rounded-xl bg-brand-500 text-white font-bold hover:bg-brand-600">Continue with this package</a><p class="text-xs text-muted mt-3">Illustrative estimate only. Provider assessment and written terms determine eligibility, deposit, interest, fees and repayments.</p></div></section></div>';
+    document.body.appendChild(financePopup);
+    const financeDialog=financePopup.querySelector('[data-finance-dialog]');
+    const packageSelect=financePopup.querySelector('[data-finance-package]');
+    const periodSelect=financePopup.querySelector('[data-finance-period]');
+    const contributionSelect=financePopup.querySelector('[data-finance-contribution]');
+    const naira=new Intl.NumberFormat('en-NG',{style:'currency',currency:'NGN',maximumFractionDigits:0});
+    const financeUpdate=()=>{
+      const total=Number(packageSelect.value),months=Number(periodSelect.value),percent=Number(contributionSelect.value);
+      const upfront=Math.round(total*percent/100),principal=total-upfront,interest=Math.round(principal*.04*months),fee=Math.round(principal*.03),monthly=Math.ceil((principal+interest+fee)/months);
+      financePopup.querySelector('[data-finance-price]').textContent=total?naira.format(total):'Assessment required';
+      financePopup.querySelector('[data-finance-upfront]').textContent=total?naira.format(upfront):'To be assessed';
+      financePopup.querySelector('[data-finance-principal]').textContent=total?naira.format(principal):'To be assessed';
+      financePopup.querySelector('[data-finance-interest]').textContent=total?naira.format(interest):'To be assessed';
+      financePopup.querySelector('[data-finance-fee]').textContent=total?naira.format(fee):'To be assessed';
+      financePopup.querySelector('[data-finance-monthly]').textContent=total?naira.format(monthly)+' / month':'Custom quote';
+      financePopup.querySelector('[data-finance-note]').textContent=total?'Illustration uses 4% flat interest per month on the financed amount and a one-time 3% administration fee on that amount. Final terms are subject to provider assessment and written confirmation.':'Commercial and custom systems require a site and load assessment. Final scope and any finance terms are confirmed separately.';
+      const selected=packageSelect.options[packageSelect.selectedIndex].text.split(' — ')[0];
+      financePopup.querySelector('[data-finance-continue]').href='finance.html?package='+encodeURIComponent(total?selected:'Request custom sizing')+'#finance-application';
+    };
+    [packageSelect,periodSelect,contributionSelect].forEach(control=>control.addEventListener('change',financeUpdate));
+    financeUpdate();
+    const financeBackground=Array.from(document.body.children).filter(element=>element!==financePopup);
+    const financeInertState=new Map(financeBackground.map(element=>[element,element.inert]));
+    let financeOpener=null,financeShown=false;
+    const closeFinancePopup=()=>{
+      financePopup.classList.add('hidden');financePopup.setAttribute('aria-hidden','true');document.body.style.overflow='';
+      financeBackground.forEach(element=>element.inert=financeInertState.get(element));financeOpener?.focus({preventScroll:true});
+    };
+    financePopup.querySelectorAll('[data-finance-close],[data-finance-backdrop]').forEach(button=>button.addEventListener('click',closeFinancePopup));
+    document.addEventListener('keydown',event=>{
+      if(financePopup.classList.contains('hidden'))return;
+      if(event.key==='Escape'){closeFinancePopup();return}
+      if(event.key==='Tab'){
+        const focusable=[...financePopup.querySelectorAll('button:not([disabled]),select:not([disabled]),a[href]')].filter(element=>element.offsetParent!==null),first=focusable[0],last=focusable[focusable.length-1];
+        if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}
+        else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}
+      }
+    });
+    const financeObserver=new IntersectionObserver(entries=>{
+      if(financeShown||!entries.some(entry=>entry.isIntersecting))return;
+      financeShown=true;financeObserver.disconnect();financeOpener=document.activeElement;
+      financePopup.classList.remove('hidden');financePopup.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+      financeBackground.forEach(element=>element.inert=true);financePopup.querySelector('[data-finance-package]')?.focus({preventScroll:true});
+    },{threshold:.25});
+    financeObserver.observe(homePackagesSection);
+  }
+
   const auditPackages=[
     ['Portable 500',.5,1,1],['Portable 1K',1,1,1],['Essential 1.5',1.2,1.5,1],['Essential Plus',2.5,1.5,1],
     ['Comfort 2.5',2.5,2.5,2],['Comfort 5',5,3,3],['Scale 5',5,6,5],['Scale 10',10,6,6],['Scale 15',15,6,10],
@@ -55,7 +164,7 @@
   const auditMoney=value=>'₦'+Math.round(value||0).toLocaleString('en-NG');
   document.querySelectorAll('[data-load-audit]').forEach(form=>{
     const rows=form.querySelector('[data-load-rows]');
-    const report=form.closest('#load-assessment,#quote')?.querySelector('[data-audit-report]');
+    const report=form.closest('[data-audit-scope]')?.querySelector('[data-audit-report]')||form.closest('#load-assessment,#quote')?.querySelector('[data-audit-report]');
     const status=form.querySelector('[data-audit-status]');
     const requestedType=new URLSearchParams(window.location.search).get('type');
     if(['home','business','commercial'].includes(requestedType)&&form.querySelector('[data-site-type]')) form.querySelector('[data-site-type]').value=requestedType;
@@ -63,7 +172,7 @@
     const addRow=(initial='LED light')=>{
       const row=document.createElement('div'); row.className='grid grid-cols-2 sm:grid-cols-[1.5fr_.7fr_.8fr_.8fr_auto] gap-2 items-center p-2 rounded-xl bg-white border border-ink/10';
       const opts=auditAppliances.map(([name])=>`<option ${name===initial?'selected':''}>${name}</option>`).join('');
-      row.innerHTML=`<label class="col-span-2 sm:col-span-1"><span class="sr-only">Appliance</span><select data-load-appliance class="${inputClass}">${opts}</select></label><label><span class="sr-only">Quantity</span><input data-load-qty type="number" min="1" value="1" class="${inputClass}" aria-label="Quantity"></label><label><span class="sr-only">Watts per unit</span><input data-load-watts type="number" min="1" value="10" class="${inputClass}" aria-label="Watts per unit"></label><label><span class="sr-only">Hours per day</span><input data-load-hours type="number" min="0" max="24" step=".5" value="6" class="${inputClass}" aria-label="Hours per day"></label><div class="col-span-2 sm:col-span-1 flex items-center justify-between gap-2"><label class="text-xs text-ink/75 flex items-center gap-1"><input data-load-critical type="checkbox" checked> Essential</label><button type="button" data-remove-load class="px-2 py-1 rounded-md text-muted hover:text-red-700" aria-label="Remove load">×</button></div>`;
+      row.innerHTML=`<label class="col-span-2 sm:col-span-1 min-w-0"><span class="block text-[10px] leading-tight font-bold text-ink/75 mb-1">Appliance</span><select data-load-appliance class="${inputClass}" aria-label="Appliance">${opts}</select></label><label class="min-w-0"><span class="block text-[10px] leading-tight font-bold text-ink/75 mb-1">How many?</span><input data-load-qty type="number" min="1" value="1" class="${inputClass}" aria-label="How many of this appliance?"></label><label class="min-w-0"><span class="block text-[10px] leading-tight font-bold text-ink/75 mb-1">Power (watts)</span><input data-load-watts type="number" min="1" value="10" class="${inputClass}" aria-label="Power for one appliance in watts"></label><label class="min-w-0"><span class="block text-[10px] leading-tight font-bold text-ink/75 mb-1">Hours per day</span><input data-load-hours type="number" min="0" max="24" step=".5" value="6" class="${inputClass}" aria-label="Hours used per day"></label><div class="col-span-2 sm:col-span-1 flex items-end justify-between gap-2 pb-1"><label class="text-xs text-ink/75 flex items-center gap-1.5"><input data-load-critical type="checkbox" checked> Keep on during outage</label><button type="button" data-remove-load class="px-2 py-1 rounded-md text-muted hover:text-red-700" aria-label="Remove this appliance">×</button></div>`;
       rows.appendChild(row);
       const appliance=row.querySelector('[data-load-appliance]'), watts=row.querySelector('[data-load-watts]');
       appliance.addEventListener('change',()=>{const selected=auditAppliances.find(a=>a[0]===appliance.value);if(selected)watts.value=selected[1]});
